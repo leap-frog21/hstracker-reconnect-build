@@ -1,0 +1,8 @@
+{
+  "cut_seconds": 2.0,
+  "delay_ms": 150,
+  "cooldown_seconds": 6.0,
+  "only_battlegrounds": true,
+  "log_root": "/Applications/Hearthstone/Logs",
+  "verbose": false
+}

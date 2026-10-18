@@ -1,0 +1,14 @@
+{
+  "suite_version": "3.0.0",
+  "archive_sha256": "104f145c3bbd10364010155900b2d0063c5466ead235f439f60a4472e2a854e5",
+  "real_disconnect_performed": false,
+  "installed_from_extracted_archive_outside_project": true,
+  "launchagent_uses_installed_resources": true,
+  "backend_probe_with_old_project_absent": true,
+  "actual_launchagent_started_both_apps_for_simulated_game_process": true,
+  "actual_launchagent_stopped_both_apps_after_simulated_game_exit": true,
+  "test_game_signal": "temporary compiled process named Hearthstone; actual game client was not launched",
+  "old_project_restored": true,
+  "stage_temporary_files_cleaned": true,
+  "offline_regression_tests": 7
+}

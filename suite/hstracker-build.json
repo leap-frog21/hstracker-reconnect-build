@@ -1,0 +1,1603 @@
+{
+  "upstream_commit": "8d5ff46962ad485136cbc863ab62752004bdbe49",
+  "patch_sha256": "1942cce679748ca114f0a28ff1811cd6ab1cb6b00b2e6d3cd3cc99439efce994",
+  "xcode": "Xcode 26.6\nBuild version 17F113",
+  "architecture": "arm64",
+  "signature": "ad-hoc; not notarized",
+  "live_acceptance": "not performed",
+  "binary_dependencies": [
+    {
+      "path": "downloaded-frameworks/BobsBuddy.zip",
+      "sha256": "6930a430808fc058805cde4d9b6f1b804d90160e7978a4d5a7f94c4baff9c156"
+    },
+    {
+      "path": "downloaded-frameworks/HearthDb.zip",
+      "sha256": "6fca620dea3564a24a26c72c416a13543d73cc73b429567685e8a16a68b666b6"
+    },
+    {
+      "path": "downloaded-frameworks/HearthMirror/HearthMirror.framework/HearthMirror",
+      "sha256": "ba6b427d43fa586e9f0785bcfa350f0b466130a55a67b65d8c3b697b25e7973c"
+    },
+    {
+      "path": "downloaded-frameworks/HearthMirror/HearthMirror.framework/Versions/A/HearthMirror",
+      "sha256": "ba6b427d43fa586e9f0785bcfa350f0b466130a55a67b65d8c3b697b25e7973c"
+    },
+    {
+      "path": "downloaded-frameworks/HearthMirror/HearthMirror.framework.dSYM/Contents/Resources/DWARF/HearthMirror",
+      "sha256": "5a93dd44c1f3c3d1829078268b39a761d02aedbfb8162d116de524f4a4bc4c91"
+    },
+    {
+      "path": "downloaded-frameworks/HearthMirror/HearthMirror.framework.dSYM.zip",
+      "sha256": "62d3018f8170e7ad8e9aaef531fbc56704254aa70b146ef9a3f4799c9dac5952"
+    },
+    {
+      "path": "downloaded-frameworks/HearthMirror/HearthMirror.framework.zip",
+      "sha256": "d338d741e2773528a9b657020a6d2d3a741db07362c6965bc3b0c674e2f57d1f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/mono-8.0.29-arm64.zip",
+      "sha256": "b1e01264d781003e16dbd02427f8603a2c59a726c0a3710dc813be4aafdc1469"
+    },
+    {
+      "path": "downloaded-frameworks/mono/mono-8.0.29-x64.zip",
+      "sha256": "79c2278120cd10b53bcf12a7c4641b2b2c7bdb871f045f74712390f3b54c2196"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/Microsoft.CSharp.dll",
+      "sha256": "b8dd18bb1e5f5527162d3b2290b5c80a92a5e7f07c8a2f61ba619fd881ae5e10"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/Microsoft.VisualBasic.Core.dll",
+      "sha256": "46dc7e7efa2cfd88ff5799eb4dd5358d46ceb247b88cf62ad890550666f4a37a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/Microsoft.VisualBasic.dll",
+      "sha256": "c17f1ecdfd2a5b646a18152552291a9233c29c31085a090172943a6b1001f77e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/Microsoft.Win32.Primitives.dll",
+      "sha256": "70807d9c08527e2a5d4c5b057ac897906cb250b1d4822e4ee2a62d58a1ca2076"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/Microsoft.Win32.Registry.dll",
+      "sha256": "484ecb4d12a62e16f73eddcebe15433d9799400885e73816746e2f1f9cea2f54"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.AppContext.dll",
+      "sha256": "6bb777a82f437637565aa463830180a896ab890095fc9d011d76d669c4626ccf"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Buffers.dll",
+      "sha256": "b9f2ea88dd3d3f634b3cb1d67b55b7b120df20d19081d1768b52cd44f31a01a4"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Collections.Concurrent.dll",
+      "sha256": "ef53d68c80a4419f4613381469d08d1f113a99bb887efbc3a5f0e2ab33cac40b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Collections.Immutable.dll",
+      "sha256": "00ddcd0332f13766f1782c3416c8accfe157899f86b10548fdcb26b97ded76b2"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Collections.NonGeneric.dll",
+      "sha256": "20624c1511b42a0647233dbde99382f6869ed1013be995d3530e77c6b3a24a06"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Collections.Specialized.dll",
+      "sha256": "653c41c97415c060a3d1702e42b7dcfea321c400d84dfd0e8be994b00d07198f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Collections.dll",
+      "sha256": "4c86475bf14dcc4d444168cfa2ce2f3ab63a0de8048ac8a84f8ced00685f3695"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ComponentModel.Annotations.dll",
+      "sha256": "6a831d7060d718c03bfaba74e9f28bfce73fe248bf97c891555558d77b1cd00c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ComponentModel.DataAnnotations.dll",
+      "sha256": "04c6a5b04c564dca032bb8703f7e4a76a019d6a0f440aefc58793b5a5ebcedd8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ComponentModel.EventBasedAsync.dll",
+      "sha256": "6228adb3d2043c437f648023b7e23d5e455ed750f34bc4e94ec53bf6b5f93ea3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ComponentModel.Primitives.dll",
+      "sha256": "9f340fa832b9282b7a0ca149b27859a44b114da9ee10eccf71a3e3640d234dcb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ComponentModel.TypeConverter.dll",
+      "sha256": "5ef9daf703d8cb7d94d53778b0f2235cde2a0d4e54f3610ff74663651ec41b67"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ComponentModel.dll",
+      "sha256": "b21afab278ecf784185c2f2253bfd72b01e13df3881dc1c3b4a49994b0f4c9e7"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Configuration.dll",
+      "sha256": "da4cd7daed8ec82fe3bfc0f06d8f45c2a50d691e59979bb6a4dd5379ed699a22"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Console.dll",
+      "sha256": "e85dc80217c2fa9908238aabd1840b05e58ee3de759b9122e7c5c97437d3c00d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Core.dll",
+      "sha256": "865b50e7cd9d3827c40cb09e611095bd67a4e7344a66240ed01011cbf7629866"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Data.Common.dll",
+      "sha256": "9d974c616c1a8d6c0cf7b16fbf38e09794ca22f0493fd3d247bb940280b7fdb1"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Data.DataSetExtensions.dll",
+      "sha256": "d9a569d304176d99c3310e8cc003be6a3b316d4e9b1828418289f4f75a0612f2"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Data.dll",
+      "sha256": "c1368d863097f9d347c937da77710b0023251f54d7ae4adc3f7b3dc4bfcfa117"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.Contracts.dll",
+      "sha256": "1d9f36fb6d9658f4bcc1463f02fd3f748c540f1524b543549109096091ec26ce"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.Debug.dll",
+      "sha256": "800a849abf8fc0964bc00c0e086ba4132fcfb1d7f9fa7787f2b8d77e9f668f08"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.DiagnosticSource.dll",
+      "sha256": "29623af2ab3ffb06f348ced0e1bc85e93d313fb356411efb62289db621a235f5"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.FileVersionInfo.dll",
+      "sha256": "1e2598a3cbeb29eab4009b95181b54b837ba2d66ac9607119015676c1ec9c8a6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.Process.dll",
+      "sha256": "a3d42b5c820f797e32df6d8e7cb5f0abe1c43581123928c6717864668aa39af6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.StackTrace.dll",
+      "sha256": "31b7b1c9b407fee81255b0fddd96393a9b2bc3ebbb44c13d7304fd6a8583bf91"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.TextWriterTraceListener.dll",
+      "sha256": "609963c600d5fa6cbd2aa8aea1d65a13aabf41bdfda0e1eb067f47008210a29c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.Tools.dll",
+      "sha256": "a37452330eb93ab394279b28e4d83b3e8a9a8acf73248a2c2283adbe4e6c958d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.TraceSource.dll",
+      "sha256": "202fcc2ba66e99bcbbe39c2de7c50fc8d5bd962f744882ff156524becd074a8c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Diagnostics.Tracing.dll",
+      "sha256": "09dfe8615d4a2be94601f9ab376bdd12109bfe03c0535bfd13bc34a68027bd39"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Drawing.Primitives.dll",
+      "sha256": "6a61f03cb3236b600ef68daf7451a6f7ad0a5ba6e27214f285f8049214e0f5f9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Drawing.dll",
+      "sha256": "deba77d4b9db9a1d98bb1dc621847ecb010460c2e9487fafc6b75d67a5e3c189"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Dynamic.Runtime.dll",
+      "sha256": "24ac26cd2d09b84b4afb86cd9ed0ec595e4e9d4d0edeaa90ed9e26d398287a0c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Formats.Asn1.dll",
+      "sha256": "a9657d502994bd97d6b8ae6e309a9108635ddda3e6ad98cd990e65bdee3c3f76"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Formats.Tar.dll",
+      "sha256": "2a9846af5522ebcc9bdb6d60250d9012a4cf5d1d32b7369a74b452d97265340c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Globalization.Calendars.dll",
+      "sha256": "83360d2a1c52fd718459ffecf2c77dbb9b35ac56e16aa3c688b7d7d2f06d06ac"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Globalization.Extensions.dll",
+      "sha256": "6d3b975a1f6e560e7d5d3c45284cd4787b3472d0a2331cc628a10162cde3a48e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Globalization.dll",
+      "sha256": "e3388ef18fa6539b74a425ba649be7e510f019bf428c170e9155258b28d6f54c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.Compression.Brotli.dll",
+      "sha256": "4f9974c38dc3167dd59878cc5a1e4d4c16aa2c67fb03afb7b3a679f6a1611a93"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.Compression.FileSystem.dll",
+      "sha256": "a8ba0b26385ecd5c23fd262561947523438d2109cd5e7d787f27703288ac2f43"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.Compression.ZipFile.dll",
+      "sha256": "4c55ae2c7260e81de372ae1e6a844aee9df85cd359adacf4c0b1d76e378b02e9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.Compression.dll",
+      "sha256": "80b7783e89a3a1e411f78d15d8df20c89138d05170a765ab472d815cdfa3df2c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.FileSystem.AccessControl.dll",
+      "sha256": "5f0f5a59794990b97ff62e2e35497824dfca6b586d7964e99cab3005bb7dfa36"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.FileSystem.DriveInfo.dll",
+      "sha256": "9589830747f59e1676735f1a1824ae9dbb81e1e4df96528aa9fe3942a503b011"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.FileSystem.Primitives.dll",
+      "sha256": "e32f4b0b1261179ffd2ca0826c0f8723b6a2ce1d6c935f97561b95d073ad00c6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.FileSystem.Watcher.dll",
+      "sha256": "b3c735b737228eee7d9e714b9d6d2ed81014cafa91511aa13b3d7354ac4ce809"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.FileSystem.dll",
+      "sha256": "fef2db25a9d52340fd7526adb79e3c2495a10dfc71c585aff0b9558be06d5e75"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.IsolatedStorage.dll",
+      "sha256": "b2bf3063037e0dc0396712f82286b0599ecbe33aa02940d0576a0101cbcee517"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.MemoryMappedFiles.dll",
+      "sha256": "73ee17e5703d3925bb9ba2222c09dbf1a0b01d44fc58aa28955eb4a02f435847"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.Pipes.AccessControl.dll",
+      "sha256": "79e8b06bfd5ba78aaaf681f73e5e52409ca5f49ee4dcef7bcdae74124057f9f5"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.Pipes.dll",
+      "sha256": "8db76f93cea40907184c4675f304f0f94ff863814e6dd468e8937ba36e773c80"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.UnmanagedMemoryStream.dll",
+      "sha256": "a8bb783396f3281ef4566b1cade66fba6950981ed4cecf17f28b1c55ba7480dd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.IO.dll",
+      "sha256": "d9837d99acce2ea20d38501016bb9cf0acaf42a0c6ceaa611e29998ed7bbc8b4"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Linq.Expressions.dll",
+      "sha256": "b8dbdc09a15a4596434d8afa2cdf45cd3785aa76f4f59caa9a45d395624a8309"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Linq.Parallel.dll",
+      "sha256": "e3b5edab3d7a4e0a39abe803930003e736a853d60dfa21e9d97b915fcbcdd9e7"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Linq.Queryable.dll",
+      "sha256": "4ce88038bbddb95f42412d466b9a1f7d59df0bc4053c9c75db71f9389d39ba05"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Linq.dll",
+      "sha256": "216f9b700e8800de4dd7a1f4c200c4dad98b4e06f8e1e69d8ce7b0fe1be840ea"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Memory.dll",
+      "sha256": "e6e26b23bd9822fb16c51a94783423835e68370690aab0f1ae9d4f224b0d12fb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Http.Json.dll",
+      "sha256": "eeb7ab8e9698aff6ccd456cd46fafb12382636224e2dc90d4d548a0f7caee347"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Http.dll",
+      "sha256": "ae85e371cacb7cd14774e20f16fdbb4a14c69e363fc75fdddcdbcff6c77699ab"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.HttpListener.dll",
+      "sha256": "61783f23b7d7c7e7ea784022111a92c750bbd6c121fcec0f10e21be5409ac5ce"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Mail.dll",
+      "sha256": "b665644081134387758fb542160446d2a92876c552a1d99c11154061667902a5"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.NameResolution.dll",
+      "sha256": "5818ded45ffb4c991dd6d9f56bf0ac4bb991c6d3669096a70544ec0fcba172b6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.NetworkInformation.dll",
+      "sha256": "a91df072411fe8c34b8b083ef43012da775a7aaa22a9fdc8a85dc227be90cf0e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Ping.dll",
+      "sha256": "2aa09b6b26867234994dd77b62ea9715cf3c1cfb8f9b111370ad314afdf810a8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Primitives.dll",
+      "sha256": "08b0b60e7f9099ff78bb20bab3f14a32d8ee54863e483c5ce0a99c1bc70c9cfb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Quic.dll",
+      "sha256": "e6bd9cc604debcb83010f88e2fb046d5e26bcea30be7dad2c067b96ac7351391"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Requests.dll",
+      "sha256": "6e97a96855f5d16e7d599886ee7be4b50aa4e41e389a5020e2dcf195b74f1ce9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Security.dll",
+      "sha256": "1e7fc9e9f25889243dde345597432f561a59b080bb11a566be9712c62c4f6c3f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.ServicePoint.dll",
+      "sha256": "3459a6bcf2a8d8081914090853b6556622d7ed41210797a7e775be5490a4a3a6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.Sockets.dll",
+      "sha256": "b96ae156d27d18d48eeebc19a62c2f4cee94f306bb06497597e18f1136a5c3ae"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.WebClient.dll",
+      "sha256": "df1c43b720374191453dc70c49d7a87acc61c42c89f3a9668cc90a8010223b70"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.WebHeaderCollection.dll",
+      "sha256": "7351da34a7086965940da63a927900f8be50f7faef65c8bbc12cc41f28db56b3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.WebProxy.dll",
+      "sha256": "9bcddff4190a01466b873b32b1367c296132e54df880e85a186dad612c99f1fb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.WebSockets.Client.dll",
+      "sha256": "5c130a8af8c373da7dd8ad11074577bc2fd0c071fecdc3bf60590380f0b4d588"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.WebSockets.dll",
+      "sha256": "fea9a7f3c70643b199e8c09896f4a4629f0bc5f7420234b3a9f3d9738e16a2ce"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Net.dll",
+      "sha256": "4014891eb79c5abb38c99b66378a61b9150a5708001befe31821972904186c0a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Numerics.Vectors.dll",
+      "sha256": "0bdf97448ebe918292db393d6f873445872438a5b373ce3bb6818effb6269c70"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Numerics.dll",
+      "sha256": "9d459798b614075f4a58b700e3faf2e849f27e27190156a36879034688fbb9b4"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ObjectModel.dll",
+      "sha256": "1e008049b35f6d9af835b30fa9da79120d6e8e18ac46d8619135d19ed55f4259"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Private.DataContractSerialization.dll",
+      "sha256": "f153f897bd02741b3e66c9883228b9f6cb93450a3ee93a8240237ea83160f691"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Private.Uri.dll",
+      "sha256": "1b19901bbd78781665e055d559a6a3ab50ed55acbbe6fbf9af9ef3d3ea396506"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Private.Xml.Linq.dll",
+      "sha256": "4479b36c60e7fa032f17a8dc407d9f2ec34e7bed42bf85217cf6dfcfd0b99b11"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Private.Xml.dll",
+      "sha256": "8400da063456165c1b9b3f73dc8d27104b38cc7796a81d4ed59a9e42e00b1e7b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.DispatchProxy.dll",
+      "sha256": "1e694dc440a3d32d53b78ca01987b4d4e127e0d4054ee3f512992458918c3041"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.Emit.ILGeneration.dll",
+      "sha256": "d847b6380104a5f797f7bb690569b799dba6f2343ab15ed5aec7ad0a5d3a9adb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.Emit.Lightweight.dll",
+      "sha256": "e5f7a3e77f265bc803b6a1cb768920ae16f451527d923301643a1377cc8501e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.Emit.dll",
+      "sha256": "91d8155dda402c2bc07148a7927b1c7c685ef71e7aaee850254931a7ad4ba4f3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.Extensions.dll",
+      "sha256": "7989e243d1665d58856f7f56682eea1e636298109207cbea619fac398baf2dab"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.Metadata.dll",
+      "sha256": "af98831c3468b0a01c8c6c512e700f6c20df71587519494950b6b120c3435d37"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.Primitives.dll",
+      "sha256": "094b628b1fe84e45eaefd2461897077743e71dd38f2e5fceb9561e0fefc0e440"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.TypeExtensions.dll",
+      "sha256": "370e3ea0ff29b9ea8c7bef41193b2172e3c17116dd29b518255d2bb7cf5d3da9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Reflection.dll",
+      "sha256": "2c3700c304a5964772b6042511d052d1594a79e819882dbdb5a39550c9805eec"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Resources.Reader.dll",
+      "sha256": "052e41d73b34b50aaa5baadc047cf09c2aaf0b2a99b351d57b957f325bd83423"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Resources.ResourceManager.dll",
+      "sha256": "4f046006a05934cd92f72b3706091a3070d942ab46eefc4c2e2a3ed758d0cc8d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Resources.Writer.dll",
+      "sha256": "f0542671701ca849faafd90a75b5dabd8b6970c25c72250efed6d5ed508c0afa"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.CompilerServices.Unsafe.dll",
+      "sha256": "df3fdeacf7bb896b262cb57dd5f6c53ec67be241c0d1ece9fad0468d6558a1b2"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.CompilerServices.VisualC.dll",
+      "sha256": "34065b65eafe3cd8687e91087f18f27a66e23c81090677e6d743bca4cbdd5f7a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Extensions.dll",
+      "sha256": "f3c8ea9b4e1d9fe593f8339b04d9d858c57a3cf5888835bb63417a0886cd0ac9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Handles.dll",
+      "sha256": "e4623612e341d3c69c3f387b502308aead33be625fadbdae98265b242116bef8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.InteropServices.JavaScript.dll",
+      "sha256": "ea56ab5c17ba62fb96ed488d17dd4d46de80a4b898fc6389d19c4ef6f558a370"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.InteropServices.RuntimeInformation.dll",
+      "sha256": "9e61e418416be509c8cd724220ea4af13e1e8fdf5b5a9b332921aa311fcadaee"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.InteropServices.dll",
+      "sha256": "8b1f8345eb8612dbae798067f6aa5fffff3a4ba80c02bf65fa6cb31fe5efa2bf"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Intrinsics.dll",
+      "sha256": "74511e00e4ce21a3322cbf36db9f5207d7d52e9574dadbcd0e8d11df315ca07d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Loader.dll",
+      "sha256": "facc809dbab1431455bb8966df303b7820b9ca735e73d81ee426ef64dd60e8d0"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Numerics.dll",
+      "sha256": "d1251a51d7fbf5091476bf8d94185251ce30c9c7f3fced304d31050fbc8d3dcf"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Serialization.Formatters.dll",
+      "sha256": "5b0fa0aee0b9061cb16a30ee038219e5608efd746f7db27156fd0114f20d3030"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Serialization.Json.dll",
+      "sha256": "9e76861f23eb332fc064c7cc13f32e3a7fdf41a9fe2af64fb788a591d10e158a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Serialization.Primitives.dll",
+      "sha256": "ab172fdbdbb8fe6afb94d910137a8b0ce0c4129f7507abedb79204b9f1049355"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Serialization.Xml.dll",
+      "sha256": "68674c305b5b43410eaff8664dc06cc36bfb8234d028c5451527a96776512ee8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.Serialization.dll",
+      "sha256": "d49e591962c0944c2b21bd25ecf2eb463375394f2627fc9f3224f41326d3c66d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Runtime.dll",
+      "sha256": "6eb7e4b3fda630315d626ae7cf1921c660d24aa31fccdb87d4198a86839ebf61"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.AccessControl.dll",
+      "sha256": "b54362029ab8e41ebb664e86e1e5258cabb215be99a14389a8157d77a346f824"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Claims.dll",
+      "sha256": "1d6b0780437dd6b542013c2dbbb7486f45cb0c537f958860cc1a70072bfe38e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Cryptography.Algorithms.dll",
+      "sha256": "d95c45234277057e76c1e59503c291d1dabecc00d71d9e2c688a85e6d4166cdd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Cryptography.Cng.dll",
+      "sha256": "d3b68a4d684ac189171c8b474f82643c77ae626766fddffa85a31ea905a438dd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Cryptography.Csp.dll",
+      "sha256": "79748af5983acf3f77960d315cb0b5a5f9b596299c208419eb5fd253d478df7d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Cryptography.Encoding.dll",
+      "sha256": "8d87b23c59b7cccffbe5266098bc58a5645ae6620e65a34cc2fa9f8dd403090e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Cryptography.OpenSsl.dll",
+      "sha256": "c907219a420c432d7b4f2ff09382b3cfae578bab092a3bb807e61c7942a60464"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Cryptography.Primitives.dll",
+      "sha256": "4788858e35a803d6384c15a5114dfa9765dd797f7e02aa33e82338b0d26ce6fd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Cryptography.X509Certificates.dll",
+      "sha256": "61bcf3f3e8152fb46ee0df59b94ea8550f6c7cdfe720249dcacedd92e5ed12e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Cryptography.dll",
+      "sha256": "5eed782614f0d27ec2b6d69ca53e640362c052797c1d9cf6c12344a542434e5d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Principal.Windows.dll",
+      "sha256": "151c27b50c09341b77ade7b2bf84ae2634cc2bca04c3c46db4e5c3a084db9d83"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.Principal.dll",
+      "sha256": "a9db7dfa24f3bebedacca4afc2db97ff0a1c45cbf9407dc4fab7a74261c7514e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.SecureString.dll",
+      "sha256": "c77a2495c445409111beec6a3cd6e4896a1e427298ca9f661486470316b88f75"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Security.dll",
+      "sha256": "4d6b6bb9cff87c856bdf7db34dcdac0afd1fc4d3134c01c6157294c9983c91c0"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ServiceModel.Web.dll",
+      "sha256": "e9e9bbbce22730df175dff2b4618eeb639a30982758ce1ab428f60b594bda6b1"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ServiceProcess.dll",
+      "sha256": "594482727d1dae3980c2b0b01a33ff3beae96f67cbd1f81fef4faeab9efe75f7"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Text.Encoding.CodePages.dll",
+      "sha256": "ca9e482e8bef848cb1380522247fcacb83699885a86701cab32b354bf906c973"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Text.Encoding.Extensions.dll",
+      "sha256": "9102afc31e34b43c678d21eaa1889653013a601db58805ede71d9cee5d2019cd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Text.Encoding.dll",
+      "sha256": "8c233ef99282b65faf325b6e3eb265bb2cf141a398276a641568aa29148c2ddb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Text.Encodings.Web.dll",
+      "sha256": "fd813d5d7a7aa2f3da1f5885a31354c6fc62472e3cbcca6538f49dd4aabf7485"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Text.Json.dll",
+      "sha256": "902eb86c28fb22315e36ce94880cd2b7326c860e3a6d02ab79f29452bdb4c50b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Text.RegularExpressions.dll",
+      "sha256": "756178ddea4ecbb04be818db4ecb3ded491c7dcb86de99fc4c8df8529c69c01b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.Channels.dll",
+      "sha256": "953dd37ff3d47bdb5c5e4611b079d09c3611b2f3e7accd411d495c9a764b31be"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.Overlapped.dll",
+      "sha256": "3ab81cefce8f8653678f71e8b2404d8aae3cb0ab48588ce4d3b562f9b95fb586"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.Tasks.Dataflow.dll",
+      "sha256": "ee8a831117c579a68ab3d973fd4e845c50d1170fdd8df4cdc13caf6d4df0e89f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.Tasks.Extensions.dll",
+      "sha256": "8a1d65058f24fb31d14a5b2330958906a635ee3e4d5d642ca352be1dca42daea"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.Tasks.Parallel.dll",
+      "sha256": "437ac479c2f974b87ca0260e999b82b3ccd8a4a6f9ccb386cd7ca7610918407d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.Tasks.dll",
+      "sha256": "5f2fdf403c677ad1b9af562f58da921a3ea38edc0ac709b744082c2ce5505784"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.Thread.dll",
+      "sha256": "d4915b92e885bcdf64d582446452086e383cd79b54f8fa629d543b1ba63d3a80"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.ThreadPool.dll",
+      "sha256": "93e4dd26dd4ed238cb3fda2db955175f22e49377f2fc26222782373b19530c3c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.Timer.dll",
+      "sha256": "af07ab9842d671f3377e5a752e8b80a13a3002dd3acf061736bc6d60f20eff17"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Threading.dll",
+      "sha256": "ddb1c5efa344f0bab59042844f18c5d17d2cf54dadb49cc8fa4eeac7703b98da"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Transactions.Local.dll",
+      "sha256": "45e4eba23085c58aca783d248521e79f59cf6d28cde9d65f44a303b2e36b5ce5"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Transactions.dll",
+      "sha256": "d5a37deb4c4d0a9e8632524f62c9d88e2536457f8d964e04b435aeef7ef225e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.ValueTuple.dll",
+      "sha256": "17512ac37d9f54ba357c7e42a2315babd2b56998a1555734a740ed909e15f1ce"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Web.HttpUtility.dll",
+      "sha256": "63324be474a7d72eb78b8944b4d7d84a40b9cc59e7dc8d011832c1b361b8c986"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Web.dll",
+      "sha256": "f1e50027a19e3ed164cc079385e41284cecd0d1c789b5641de9495e47a22e3bf"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Windows.dll",
+      "sha256": "ead119833a66a5798d3693c5c82ee0062abee4bbd078f5480f6141d97c17175c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.Linq.dll",
+      "sha256": "7907c582d2e162934add96ade442807a0276a7e6145e54f82e58a8dd95f65064"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.ReaderWriter.dll",
+      "sha256": "d6a726c71e976024e4687d353bb8c76d23d621299b4af76b1b2071f45b04b9de"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.Serialization.dll",
+      "sha256": "80f08072e04c042711e3dbb5f61a600c756fcdb5a0a10c63016fd9478e63dc78"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.XDocument.dll",
+      "sha256": "0e07cbf948da1bd66eb5791fec3b397d73f7c2d980b0fe671d69745ec8eb0006"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.XPath.XDocument.dll",
+      "sha256": "8eca0eaa09e3dad931194a24790e92b68ede20a2d9c59f473347738e7ed82d75"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.XPath.dll",
+      "sha256": "c1d1a1dd5b1b48fdbb6ea9e2464191a4f853ceb9dbe57127c4ab3bbf77fafd52"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.XmlDocument.dll",
+      "sha256": "c4c115c1da453b73cc24714a2ad203d98e13b8ca87cb041d80974f1489073e5b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.XmlSerializer.dll",
+      "sha256": "57f80e10f5dfbae14f9f5d2d8d4e5859aa0b9064901f9ba1a5d5e7554afe8880"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.Xml.dll",
+      "sha256": "b23f83a9cd0bec75a1a530dd7e5e29a8be06f4cc8031e784d2297d8ffe5d266a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/System.dll",
+      "sha256": "0c53277ac77e2f0b2cb8d427175f718b95009bcbb7d34505bb7719b25f855c1c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/WindowsBase.dll",
+      "sha256": "eb6c372423a3274a77ee418641030b28271594e0dd6249a6d6dcf972b202ca4e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/mscorlib.dll",
+      "sha256": "9d888af6e2bb5d8e57243e8d18d1322f1eea961440e11620688b20ff3fa9d6ed"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/lib/net8.0/netstandard.dll",
+      "sha256": "53c28abaf9c652696efef37a92d985715ec0e5340f6a4ab8ea3803020bce1796"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/System.Private.CoreLib.dll",
+      "sha256": "1c8fb2483331d21eea60ae2d09711fd419b939a1cb4e05a901a2db68e93c7829"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libSystem.Globalization.Native.dylib",
+      "sha256": "c9ec0a2e20d3f95350ed17d73656005ec67e0caa5fda195f253530346e4d0742"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libSystem.IO.Compression.Native.dylib",
+      "sha256": "7e9562614c3ea3d05177be4d3dcb081d6253c8f2c2d3be5e8ccd320a6818cb48"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libSystem.Native.dylib",
+      "sha256": "c877a79fc5219aa276c8306f6fd75068f7e4e3eec89265928e436a9122dbfaf7"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libSystem.Net.Security.Native.dylib",
+      "sha256": "727cd85c3d8cc05a7da0ffabcb8c22976c132bfa35999b0b21ec1649b3035d26"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libSystem.Security.Cryptography.Native.Apple.dylib",
+      "sha256": "31e9d3faa5a2fff2dcd63a1448c034baa70499e0cca7aed0dd9d7c4497129ad0"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libSystem.Security.Cryptography.Native.OpenSsl.dylib",
+      "sha256": "157e35f8a220fafe6497e2cf2a54d9bc8177a6b4e866ec4187ed56b44c99a5f0"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libcoreclr.dylib",
+      "sha256": "f81d889ec9dfa2e7fdb7f292a46ba75ccfb1e67ce664a8f9d53f2aed7c14926f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libhostfxr.dylib",
+      "sha256": "a5005acabbe6d7d5334150ee5035c15d96338be650b4e3a18f2f3f761766d743"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-arm64/native/libhostpolicy.dylib",
+      "sha256": "324dfc19fb382a524b70538f94f096e83ec8b6fae8cc9e2aed83616443a419f8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/Microsoft.CSharp.dll",
+      "sha256": "b8dd18bb1e5f5527162d3b2290b5c80a92a5e7f07c8a2f61ba619fd881ae5e10"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/Microsoft.VisualBasic.Core.dll",
+      "sha256": "46dc7e7efa2cfd88ff5799eb4dd5358d46ceb247b88cf62ad890550666f4a37a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/Microsoft.VisualBasic.dll",
+      "sha256": "c17f1ecdfd2a5b646a18152552291a9233c29c31085a090172943a6b1001f77e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/Microsoft.Win32.Primitives.dll",
+      "sha256": "70807d9c08527e2a5d4c5b057ac897906cb250b1d4822e4ee2a62d58a1ca2076"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/Microsoft.Win32.Registry.dll",
+      "sha256": "484ecb4d12a62e16f73eddcebe15433d9799400885e73816746e2f1f9cea2f54"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.AppContext.dll",
+      "sha256": "6bb777a82f437637565aa463830180a896ab890095fc9d011d76d669c4626ccf"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Buffers.dll",
+      "sha256": "b9f2ea88dd3d3f634b3cb1d67b55b7b120df20d19081d1768b52cd44f31a01a4"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Collections.Concurrent.dll",
+      "sha256": "ef53d68c80a4419f4613381469d08d1f113a99bb887efbc3a5f0e2ab33cac40b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Collections.Immutable.dll",
+      "sha256": "00ddcd0332f13766f1782c3416c8accfe157899f86b10548fdcb26b97ded76b2"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Collections.NonGeneric.dll",
+      "sha256": "20624c1511b42a0647233dbde99382f6869ed1013be995d3530e77c6b3a24a06"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Collections.Specialized.dll",
+      "sha256": "653c41c97415c060a3d1702e42b7dcfea321c400d84dfd0e8be994b00d07198f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Collections.dll",
+      "sha256": "4c86475bf14dcc4d444168cfa2ce2f3ab63a0de8048ac8a84f8ced00685f3695"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ComponentModel.Annotations.dll",
+      "sha256": "6a831d7060d718c03bfaba74e9f28bfce73fe248bf97c891555558d77b1cd00c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ComponentModel.DataAnnotations.dll",
+      "sha256": "04c6a5b04c564dca032bb8703f7e4a76a019d6a0f440aefc58793b5a5ebcedd8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ComponentModel.EventBasedAsync.dll",
+      "sha256": "6228adb3d2043c437f648023b7e23d5e455ed750f34bc4e94ec53bf6b5f93ea3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ComponentModel.Primitives.dll",
+      "sha256": "9f340fa832b9282b7a0ca149b27859a44b114da9ee10eccf71a3e3640d234dcb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ComponentModel.TypeConverter.dll",
+      "sha256": "5ef9daf703d8cb7d94d53778b0f2235cde2a0d4e54f3610ff74663651ec41b67"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ComponentModel.dll",
+      "sha256": "b21afab278ecf784185c2f2253bfd72b01e13df3881dc1c3b4a49994b0f4c9e7"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Configuration.dll",
+      "sha256": "da4cd7daed8ec82fe3bfc0f06d8f45c2a50d691e59979bb6a4dd5379ed699a22"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Console.dll",
+      "sha256": "e85dc80217c2fa9908238aabd1840b05e58ee3de759b9122e7c5c97437d3c00d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Core.dll",
+      "sha256": "865b50e7cd9d3827c40cb09e611095bd67a4e7344a66240ed01011cbf7629866"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Data.Common.dll",
+      "sha256": "9d974c616c1a8d6c0cf7b16fbf38e09794ca22f0493fd3d247bb940280b7fdb1"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Data.DataSetExtensions.dll",
+      "sha256": "d9a569d304176d99c3310e8cc003be6a3b316d4e9b1828418289f4f75a0612f2"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Data.dll",
+      "sha256": "c1368d863097f9d347c937da77710b0023251f54d7ae4adc3f7b3dc4bfcfa117"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.Contracts.dll",
+      "sha256": "1d9f36fb6d9658f4bcc1463f02fd3f748c540f1524b543549109096091ec26ce"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.Debug.dll",
+      "sha256": "800a849abf8fc0964bc00c0e086ba4132fcfb1d7f9fa7787f2b8d77e9f668f08"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.DiagnosticSource.dll",
+      "sha256": "29623af2ab3ffb06f348ced0e1bc85e93d313fb356411efb62289db621a235f5"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.FileVersionInfo.dll",
+      "sha256": "1e2598a3cbeb29eab4009b95181b54b837ba2d66ac9607119015676c1ec9c8a6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.Process.dll",
+      "sha256": "a3d42b5c820f797e32df6d8e7cb5f0abe1c43581123928c6717864668aa39af6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.StackTrace.dll",
+      "sha256": "31b7b1c9b407fee81255b0fddd96393a9b2bc3ebbb44c13d7304fd6a8583bf91"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.TextWriterTraceListener.dll",
+      "sha256": "609963c600d5fa6cbd2aa8aea1d65a13aabf41bdfda0e1eb067f47008210a29c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.Tools.dll",
+      "sha256": "a37452330eb93ab394279b28e4d83b3e8a9a8acf73248a2c2283adbe4e6c958d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.TraceSource.dll",
+      "sha256": "202fcc2ba66e99bcbbe39c2de7c50fc8d5bd962f744882ff156524becd074a8c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Diagnostics.Tracing.dll",
+      "sha256": "09dfe8615d4a2be94601f9ab376bdd12109bfe03c0535bfd13bc34a68027bd39"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Drawing.Primitives.dll",
+      "sha256": "6a61f03cb3236b600ef68daf7451a6f7ad0a5ba6e27214f285f8049214e0f5f9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Drawing.dll",
+      "sha256": "deba77d4b9db9a1d98bb1dc621847ecb010460c2e9487fafc6b75d67a5e3c189"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Dynamic.Runtime.dll",
+      "sha256": "24ac26cd2d09b84b4afb86cd9ed0ec595e4e9d4d0edeaa90ed9e26d398287a0c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Formats.Asn1.dll",
+      "sha256": "a9657d502994bd97d6b8ae6e309a9108635ddda3e6ad98cd990e65bdee3c3f76"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Formats.Tar.dll",
+      "sha256": "2a9846af5522ebcc9bdb6d60250d9012a4cf5d1d32b7369a74b452d97265340c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Globalization.Calendars.dll",
+      "sha256": "83360d2a1c52fd718459ffecf2c77dbb9b35ac56e16aa3c688b7d7d2f06d06ac"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Globalization.Extensions.dll",
+      "sha256": "6d3b975a1f6e560e7d5d3c45284cd4787b3472d0a2331cc628a10162cde3a48e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Globalization.dll",
+      "sha256": "e3388ef18fa6539b74a425ba649be7e510f019bf428c170e9155258b28d6f54c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.Compression.Brotli.dll",
+      "sha256": "4f9974c38dc3167dd59878cc5a1e4d4c16aa2c67fb03afb7b3a679f6a1611a93"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.Compression.FileSystem.dll",
+      "sha256": "a8ba0b26385ecd5c23fd262561947523438d2109cd5e7d787f27703288ac2f43"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.Compression.ZipFile.dll",
+      "sha256": "4c55ae2c7260e81de372ae1e6a844aee9df85cd359adacf4c0b1d76e378b02e9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.Compression.dll",
+      "sha256": "80b7783e89a3a1e411f78d15d8df20c89138d05170a765ab472d815cdfa3df2c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.FileSystem.AccessControl.dll",
+      "sha256": "5f0f5a59794990b97ff62e2e35497824dfca6b586d7964e99cab3005bb7dfa36"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.FileSystem.DriveInfo.dll",
+      "sha256": "9589830747f59e1676735f1a1824ae9dbb81e1e4df96528aa9fe3942a503b011"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.FileSystem.Primitives.dll",
+      "sha256": "e32f4b0b1261179ffd2ca0826c0f8723b6a2ce1d6c935f97561b95d073ad00c6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.FileSystem.Watcher.dll",
+      "sha256": "b3c735b737228eee7d9e714b9d6d2ed81014cafa91511aa13b3d7354ac4ce809"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.FileSystem.dll",
+      "sha256": "fef2db25a9d52340fd7526adb79e3c2495a10dfc71c585aff0b9558be06d5e75"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.IsolatedStorage.dll",
+      "sha256": "b2bf3063037e0dc0396712f82286b0599ecbe33aa02940d0576a0101cbcee517"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.MemoryMappedFiles.dll",
+      "sha256": "73ee17e5703d3925bb9ba2222c09dbf1a0b01d44fc58aa28955eb4a02f435847"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.Pipes.AccessControl.dll",
+      "sha256": "79e8b06bfd5ba78aaaf681f73e5e52409ca5f49ee4dcef7bcdae74124057f9f5"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.Pipes.dll",
+      "sha256": "8db76f93cea40907184c4675f304f0f94ff863814e6dd468e8937ba36e773c80"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.UnmanagedMemoryStream.dll",
+      "sha256": "a8bb783396f3281ef4566b1cade66fba6950981ed4cecf17f28b1c55ba7480dd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.IO.dll",
+      "sha256": "d9837d99acce2ea20d38501016bb9cf0acaf42a0c6ceaa611e29998ed7bbc8b4"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Linq.Expressions.dll",
+      "sha256": "b8dbdc09a15a4596434d8afa2cdf45cd3785aa76f4f59caa9a45d395624a8309"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Linq.Parallel.dll",
+      "sha256": "e3b5edab3d7a4e0a39abe803930003e736a853d60dfa21e9d97b915fcbcdd9e7"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Linq.Queryable.dll",
+      "sha256": "4ce88038bbddb95f42412d466b9a1f7d59df0bc4053c9c75db71f9389d39ba05"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Linq.dll",
+      "sha256": "216f9b700e8800de4dd7a1f4c200c4dad98b4e06f8e1e69d8ce7b0fe1be840ea"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Memory.dll",
+      "sha256": "e6e26b23bd9822fb16c51a94783423835e68370690aab0f1ae9d4f224b0d12fb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Http.Json.dll",
+      "sha256": "eeb7ab8e9698aff6ccd456cd46fafb12382636224e2dc90d4d548a0f7caee347"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Http.dll",
+      "sha256": "ae85e371cacb7cd14774e20f16fdbb4a14c69e363fc75fdddcdbcff6c77699ab"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.HttpListener.dll",
+      "sha256": "61783f23b7d7c7e7ea784022111a92c750bbd6c121fcec0f10e21be5409ac5ce"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Mail.dll",
+      "sha256": "b665644081134387758fb542160446d2a92876c552a1d99c11154061667902a5"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.NameResolution.dll",
+      "sha256": "5818ded45ffb4c991dd6d9f56bf0ac4bb991c6d3669096a70544ec0fcba172b6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.NetworkInformation.dll",
+      "sha256": "a91df072411fe8c34b8b083ef43012da775a7aaa22a9fdc8a85dc227be90cf0e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Ping.dll",
+      "sha256": "2aa09b6b26867234994dd77b62ea9715cf3c1cfb8f9b111370ad314afdf810a8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Primitives.dll",
+      "sha256": "08b0b60e7f9099ff78bb20bab3f14a32d8ee54863e483c5ce0a99c1bc70c9cfb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Quic.dll",
+      "sha256": "e6bd9cc604debcb83010f88e2fb046d5e26bcea30be7dad2c067b96ac7351391"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Requests.dll",
+      "sha256": "6e97a96855f5d16e7d599886ee7be4b50aa4e41e389a5020e2dcf195b74f1ce9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Security.dll",
+      "sha256": "1e7fc9e9f25889243dde345597432f561a59b080bb11a566be9712c62c4f6c3f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.ServicePoint.dll",
+      "sha256": "3459a6bcf2a8d8081914090853b6556622d7ed41210797a7e775be5490a4a3a6"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.Sockets.dll",
+      "sha256": "b96ae156d27d18d48eeebc19a62c2f4cee94f306bb06497597e18f1136a5c3ae"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.WebClient.dll",
+      "sha256": "df1c43b720374191453dc70c49d7a87acc61c42c89f3a9668cc90a8010223b70"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.WebHeaderCollection.dll",
+      "sha256": "7351da34a7086965940da63a927900f8be50f7faef65c8bbc12cc41f28db56b3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.WebProxy.dll",
+      "sha256": "9bcddff4190a01466b873b32b1367c296132e54df880e85a186dad612c99f1fb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.WebSockets.Client.dll",
+      "sha256": "5c130a8af8c373da7dd8ad11074577bc2fd0c071fecdc3bf60590380f0b4d588"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.WebSockets.dll",
+      "sha256": "fea9a7f3c70643b199e8c09896f4a4629f0bc5f7420234b3a9f3d9738e16a2ce"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Net.dll",
+      "sha256": "4014891eb79c5abb38c99b66378a61b9150a5708001befe31821972904186c0a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Numerics.Vectors.dll",
+      "sha256": "0bdf97448ebe918292db393d6f873445872438a5b373ce3bb6818effb6269c70"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Numerics.dll",
+      "sha256": "9d459798b614075f4a58b700e3faf2e849f27e27190156a36879034688fbb9b4"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ObjectModel.dll",
+      "sha256": "1e008049b35f6d9af835b30fa9da79120d6e8e18ac46d8619135d19ed55f4259"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Private.DataContractSerialization.dll",
+      "sha256": "f153f897bd02741b3e66c9883228b9f6cb93450a3ee93a8240237ea83160f691"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Private.Uri.dll",
+      "sha256": "1b19901bbd78781665e055d559a6a3ab50ed55acbbe6fbf9af9ef3d3ea396506"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Private.Xml.Linq.dll",
+      "sha256": "4479b36c60e7fa032f17a8dc407d9f2ec34e7bed42bf85217cf6dfcfd0b99b11"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Private.Xml.dll",
+      "sha256": "8400da063456165c1b9b3f73dc8d27104b38cc7796a81d4ed59a9e42e00b1e7b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.DispatchProxy.dll",
+      "sha256": "1e694dc440a3d32d53b78ca01987b4d4e127e0d4054ee3f512992458918c3041"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.Emit.ILGeneration.dll",
+      "sha256": "d847b6380104a5f797f7bb690569b799dba6f2343ab15ed5aec7ad0a5d3a9adb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.Emit.Lightweight.dll",
+      "sha256": "e5f7a3e77f265bc803b6a1cb768920ae16f451527d923301643a1377cc8501e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.Emit.dll",
+      "sha256": "91d8155dda402c2bc07148a7927b1c7c685ef71e7aaee850254931a7ad4ba4f3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.Extensions.dll",
+      "sha256": "7989e243d1665d58856f7f56682eea1e636298109207cbea619fac398baf2dab"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.Metadata.dll",
+      "sha256": "af98831c3468b0a01c8c6c512e700f6c20df71587519494950b6b120c3435d37"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.Primitives.dll",
+      "sha256": "094b628b1fe84e45eaefd2461897077743e71dd38f2e5fceb9561e0fefc0e440"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.TypeExtensions.dll",
+      "sha256": "370e3ea0ff29b9ea8c7bef41193b2172e3c17116dd29b518255d2bb7cf5d3da9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Reflection.dll",
+      "sha256": "2c3700c304a5964772b6042511d052d1594a79e819882dbdb5a39550c9805eec"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Resources.Reader.dll",
+      "sha256": "052e41d73b34b50aaa5baadc047cf09c2aaf0b2a99b351d57b957f325bd83423"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Resources.ResourceManager.dll",
+      "sha256": "4f046006a05934cd92f72b3706091a3070d942ab46eefc4c2e2a3ed758d0cc8d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Resources.Writer.dll",
+      "sha256": "f0542671701ca849faafd90a75b5dabd8b6970c25c72250efed6d5ed508c0afa"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.CompilerServices.Unsafe.dll",
+      "sha256": "df3fdeacf7bb896b262cb57dd5f6c53ec67be241c0d1ece9fad0468d6558a1b2"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.CompilerServices.VisualC.dll",
+      "sha256": "34065b65eafe3cd8687e91087f18f27a66e23c81090677e6d743bca4cbdd5f7a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Extensions.dll",
+      "sha256": "f3c8ea9b4e1d9fe593f8339b04d9d858c57a3cf5888835bb63417a0886cd0ac9"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Handles.dll",
+      "sha256": "e4623612e341d3c69c3f387b502308aead33be625fadbdae98265b242116bef8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.InteropServices.JavaScript.dll",
+      "sha256": "ea56ab5c17ba62fb96ed488d17dd4d46de80a4b898fc6389d19c4ef6f558a370"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.InteropServices.RuntimeInformation.dll",
+      "sha256": "9e61e418416be509c8cd724220ea4af13e1e8fdf5b5a9b332921aa311fcadaee"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.InteropServices.dll",
+      "sha256": "8b1f8345eb8612dbae798067f6aa5fffff3a4ba80c02bf65fa6cb31fe5efa2bf"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Intrinsics.dll",
+      "sha256": "74511e00e4ce21a3322cbf36db9f5207d7d52e9574dadbcd0e8d11df315ca07d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Loader.dll",
+      "sha256": "facc809dbab1431455bb8966df303b7820b9ca735e73d81ee426ef64dd60e8d0"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Numerics.dll",
+      "sha256": "d1251a51d7fbf5091476bf8d94185251ce30c9c7f3fced304d31050fbc8d3dcf"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Serialization.Formatters.dll",
+      "sha256": "5b0fa0aee0b9061cb16a30ee038219e5608efd746f7db27156fd0114f20d3030"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Serialization.Json.dll",
+      "sha256": "9e76861f23eb332fc064c7cc13f32e3a7fdf41a9fe2af64fb788a591d10e158a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Serialization.Primitives.dll",
+      "sha256": "ab172fdbdbb8fe6afb94d910137a8b0ce0c4129f7507abedb79204b9f1049355"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Serialization.Xml.dll",
+      "sha256": "68674c305b5b43410eaff8664dc06cc36bfb8234d028c5451527a96776512ee8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.Serialization.dll",
+      "sha256": "d49e591962c0944c2b21bd25ecf2eb463375394f2627fc9f3224f41326d3c66d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Runtime.dll",
+      "sha256": "6eb7e4b3fda630315d626ae7cf1921c660d24aa31fccdb87d4198a86839ebf61"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.AccessControl.dll",
+      "sha256": "b54362029ab8e41ebb664e86e1e5258cabb215be99a14389a8157d77a346f824"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Claims.dll",
+      "sha256": "1d6b0780437dd6b542013c2dbbb7486f45cb0c537f958860cc1a70072bfe38e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Cryptography.Algorithms.dll",
+      "sha256": "d95c45234277057e76c1e59503c291d1dabecc00d71d9e2c688a85e6d4166cdd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Cryptography.Cng.dll",
+      "sha256": "d3b68a4d684ac189171c8b474f82643c77ae626766fddffa85a31ea905a438dd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Cryptography.Csp.dll",
+      "sha256": "79748af5983acf3f77960d315cb0b5a5f9b596299c208419eb5fd253d478df7d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Cryptography.Encoding.dll",
+      "sha256": "8d87b23c59b7cccffbe5266098bc58a5645ae6620e65a34cc2fa9f8dd403090e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Cryptography.OpenSsl.dll",
+      "sha256": "c907219a420c432d7b4f2ff09382b3cfae578bab092a3bb807e61c7942a60464"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Cryptography.Primitives.dll",
+      "sha256": "4788858e35a803d6384c15a5114dfa9765dd797f7e02aa33e82338b0d26ce6fd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Cryptography.X509Certificates.dll",
+      "sha256": "61bcf3f3e8152fb46ee0df59b94ea8550f6c7cdfe720249dcacedd92e5ed12e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Cryptography.dll",
+      "sha256": "5eed782614f0d27ec2b6d69ca53e640362c052797c1d9cf6c12344a542434e5d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Principal.Windows.dll",
+      "sha256": "151c27b50c09341b77ade7b2bf84ae2634cc2bca04c3c46db4e5c3a084db9d83"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.Principal.dll",
+      "sha256": "a9db7dfa24f3bebedacca4afc2db97ff0a1c45cbf9407dc4fab7a74261c7514e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.SecureString.dll",
+      "sha256": "c77a2495c445409111beec6a3cd6e4896a1e427298ca9f661486470316b88f75"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Security.dll",
+      "sha256": "4d6b6bb9cff87c856bdf7db34dcdac0afd1fc4d3134c01c6157294c9983c91c0"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ServiceModel.Web.dll",
+      "sha256": "e9e9bbbce22730df175dff2b4618eeb639a30982758ce1ab428f60b594bda6b1"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ServiceProcess.dll",
+      "sha256": "594482727d1dae3980c2b0b01a33ff3beae96f67cbd1f81fef4faeab9efe75f7"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Text.Encoding.CodePages.dll",
+      "sha256": "ca9e482e8bef848cb1380522247fcacb83699885a86701cab32b354bf906c973"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Text.Encoding.Extensions.dll",
+      "sha256": "9102afc31e34b43c678d21eaa1889653013a601db58805ede71d9cee5d2019cd"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Text.Encoding.dll",
+      "sha256": "8c233ef99282b65faf325b6e3eb265bb2cf141a398276a641568aa29148c2ddb"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Text.Encodings.Web.dll",
+      "sha256": "fd813d5d7a7aa2f3da1f5885a31354c6fc62472e3cbcca6538f49dd4aabf7485"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Text.Json.dll",
+      "sha256": "902eb86c28fb22315e36ce94880cd2b7326c860e3a6d02ab79f29452bdb4c50b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Text.RegularExpressions.dll",
+      "sha256": "756178ddea4ecbb04be818db4ecb3ded491c7dcb86de99fc4c8df8529c69c01b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.Channels.dll",
+      "sha256": "953dd37ff3d47bdb5c5e4611b079d09c3611b2f3e7accd411d495c9a764b31be"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.Overlapped.dll",
+      "sha256": "3ab81cefce8f8653678f71e8b2404d8aae3cb0ab48588ce4d3b562f9b95fb586"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.Tasks.Dataflow.dll",
+      "sha256": "ee8a831117c579a68ab3d973fd4e845c50d1170fdd8df4cdc13caf6d4df0e89f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.Tasks.Extensions.dll",
+      "sha256": "8a1d65058f24fb31d14a5b2330958906a635ee3e4d5d642ca352be1dca42daea"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.Tasks.Parallel.dll",
+      "sha256": "437ac479c2f974b87ca0260e999b82b3ccd8a4a6f9ccb386cd7ca7610918407d"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.Tasks.dll",
+      "sha256": "5f2fdf403c677ad1b9af562f58da921a3ea38edc0ac709b744082c2ce5505784"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.Thread.dll",
+      "sha256": "d4915b92e885bcdf64d582446452086e383cd79b54f8fa629d543b1ba63d3a80"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.ThreadPool.dll",
+      "sha256": "93e4dd26dd4ed238cb3fda2db955175f22e49377f2fc26222782373b19530c3c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.Timer.dll",
+      "sha256": "af07ab9842d671f3377e5a752e8b80a13a3002dd3acf061736bc6d60f20eff17"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Threading.dll",
+      "sha256": "ddb1c5efa344f0bab59042844f18c5d17d2cf54dadb49cc8fa4eeac7703b98da"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Transactions.Local.dll",
+      "sha256": "45e4eba23085c58aca783d248521e79f59cf6d28cde9d65f44a303b2e36b5ce5"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Transactions.dll",
+      "sha256": "d5a37deb4c4d0a9e8632524f62c9d88e2536457f8d964e04b435aeef7ef225e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.ValueTuple.dll",
+      "sha256": "17512ac37d9f54ba357c7e42a2315babd2b56998a1555734a740ed909e15f1ce"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Web.HttpUtility.dll",
+      "sha256": "63324be474a7d72eb78b8944b4d7d84a40b9cc59e7dc8d011832c1b361b8c986"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Web.dll",
+      "sha256": "f1e50027a19e3ed164cc079385e41284cecd0d1c789b5641de9495e47a22e3bf"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Windows.dll",
+      "sha256": "ead119833a66a5798d3693c5c82ee0062abee4bbd078f5480f6141d97c17175c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.Linq.dll",
+      "sha256": "7907c582d2e162934add96ade442807a0276a7e6145e54f82e58a8dd95f65064"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.ReaderWriter.dll",
+      "sha256": "d6a726c71e976024e4687d353bb8c76d23d621299b4af76b1b2071f45b04b9de"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.Serialization.dll",
+      "sha256": "80f08072e04c042711e3dbb5f61a600c756fcdb5a0a10c63016fd9478e63dc78"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.XDocument.dll",
+      "sha256": "0e07cbf948da1bd66eb5791fec3b397d73f7c2d980b0fe671d69745ec8eb0006"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.XPath.XDocument.dll",
+      "sha256": "8eca0eaa09e3dad931194a24790e92b68ede20a2d9c59f473347738e7ed82d75"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.XPath.dll",
+      "sha256": "c1d1a1dd5b1b48fdbb6ea9e2464191a4f853ceb9dbe57127c4ab3bbf77fafd52"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.XmlDocument.dll",
+      "sha256": "c4c115c1da453b73cc24714a2ad203d98e13b8ca87cb041d80974f1489073e5b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.XmlSerializer.dll",
+      "sha256": "57f80e10f5dfbae14f9f5d2d8d4e5859aa0b9064901f9ba1a5d5e7554afe8880"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.Xml.dll",
+      "sha256": "b23f83a9cd0bec75a1a530dd7e5e29a8be06f4cc8031e784d2297d8ffe5d266a"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/System.dll",
+      "sha256": "0c53277ac77e2f0b2cb8d427175f718b95009bcbb7d34505bb7719b25f855c1c"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/WindowsBase.dll",
+      "sha256": "eb6c372423a3274a77ee418641030b28271594e0dd6249a6d6dcf972b202ca4e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/mscorlib.dll",
+      "sha256": "9d888af6e2bb5d8e57243e8d18d1322f1eea961440e11620688b20ff3fa9d6ed"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/lib/net8.0/netstandard.dll",
+      "sha256": "53c28abaf9c652696efef37a92d985715ec0e5340f6a4ab8ea3803020bce1796"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/System.Private.CoreLib.dll",
+      "sha256": "f6e89dc3e91e60cbee2d0c8e9992e4ddcded0e0e3d6a4746b5bca4a96c051440"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libSystem.Globalization.Native.dylib",
+      "sha256": "41a361959641627984cf39cf76d4253206f73b228bfcb147ff6b15dee96c0e00"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libSystem.IO.Compression.Native.dylib",
+      "sha256": "00b3db901f4922dea83d0f5f5ca0f2fc5987f271b92cd1c5adcb8b250589c52f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libSystem.Native.dylib",
+      "sha256": "241ad50555b79dd6f748031f12ecc5eb114986ac6c54167709660486ca64288f"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libSystem.Net.Security.Native.dylib",
+      "sha256": "060ea96487aebfe666c2b3ab8b9c108c1f3adb63c65962676604cf08c1aed6bc"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libSystem.Security.Cryptography.Native.Apple.dylib",
+      "sha256": "ef0cd6c2f473f3cef26da0d7fec04b9f038bb41022a258d3e259e13872c06f7e"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libSystem.Security.Cryptography.Native.OpenSsl.dylib",
+      "sha256": "48eaee6136f7e63c192b74a418cd851a4a16f1f93ea46bd2bcd6a100917601f8"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libcoreclr.dylib",
+      "sha256": "75c9e8939a99e9b921d130a600dbbf23b33613abe8eaf2240b0803098f7baeae"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libhostfxr.dylib",
+      "sha256": "1617bcc7857c2743e9ccb11fa975d1361dd68fd6488b5894b5b96cb87c41a03b"
+    },
+    {
+      "path": "downloaded-frameworks/mono/runtimes/osx-x64/native/libhostpolicy.dylib",
+      "sha256": "d49418f4f97a5b22c4c443de21def32b01c8c13dd2d593bbd8086313dfa07253"
+    },
+    {
+      "path": "downloaded-frameworks/mono/universal/libSystem.Native.dylib",
+      "sha256": "ce3eaefffb7059838350bd16c072adc24ee3dc4ddbf79ff446e1b3c18afc90e3"
+    },
+    {
+      "path": "downloaded-frameworks/mono/universal/libcoreclr.dylib",
+      "sha256": "307a4ecb5edc3ba06ded6259c649cd0396d677db855fb2174934ac07d99fba67"
+    }
+  ],
+  "swift_packages": [
+    {
+      "identity": "appmover",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/iamcalledrob/AppMover",
+      "state": {
+        "revision": "b4fe228937e6c752322998c705c6897a39b7f036"
+      }
+    },
+    {
+      "identity": "brightfutures",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/Thomvis/BrightFutures.git",
+      "state": {
+        "revision": "fa66fa183dce7196d431244d0215748cd14c5758",
+        "version": "8.2.0"
+      }
+    },
+    {
+      "identity": "erik",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/phimage/Erik.git",
+      "state": {
+        "revision": "109a130e9cdb00789a43a7a625293eeb12d22989",
+        "version": "5.1.0"
+      }
+    },
+    {
+      "identity": "filekit",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/nvzqz/FileKit.git",
+      "state": {
+        "revision": "9006d2888025fbe893c3c396327b2fe45a8c177b",
+        "version": "6.1.0"
+      }
+    },
+    {
+      "identity": "kanna",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/tid-kijyun/Kanna.git",
+      "state": {
+        "revision": "41c3d28ea0eac07e4551b28def9de1ede702e739",
+        "version": "5.3.0"
+      }
+    },
+    {
+      "identity": "mixpanel-swift",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/mixpanel/mixpanel-swift",
+      "state": {
+        "revision": "e0af743b6a54a1ba94702ba555acb675fd0ef47d",
+        "version": "5.1.3"
+      }
+    },
+    {
+      "identity": "oauthswift",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/OAuthSwift/OAuthSwift",
+      "state": {
+        "revision": "d85964b96dbce94df961f28b996187c835089903",
+        "version": "2.2.0"
+      }
+    },
+    {
+      "identity": "realm-cocoa",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/realm/realm-cocoa",
+      "state": {
+        "revision": "72a0dd9dc0ec1bab417155471191ef68e1bb0eaf",
+        "version": "10.32.3"
+      }
+    },
+    {
+      "identity": "realm-core",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/realm/realm-core",
+      "state": {
+        "revision": "3c4b86da569368c4ee5ccca2a112d511cc6fa936",
+        "version": "12.11.0"
+      }
+    },
+    {
+      "identity": "sentry-cocoa",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/getsentry/sentry-cocoa.git",
+      "state": {
+        "revision": "54cc2e3e4fcbf9d4c7708ce00d3b6eee29aecbb1",
+        "version": "8.38.0"
+      }
+    },
+    {
+      "identity": "sparkle",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/sparkle-project/Sparkle",
+      "state": {
+        "revision": "0ef1ee0220239b3776f433314515fd849025673f",
+        "version": "2.6.4"
+      }
+    },
+    {
+      "identity": "swift-atomics",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/apple/swift-atomics.git",
+      "state": {
+        "revision": "cd142fd2f64be2100422d658e7411e39489da985",
+        "version": "1.2.0"
+      }
+    },
+    {
+      "identity": "swifter",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/httpswift/swifter.git",
+      "state": {
+        "revision": "9483a5d459b45c3ffd059f7b55f9638e268632fd",
+        "version": "1.5.0"
+      }
+    },
+    {
+      "identity": "swiftybeaver",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/SwiftyBeaver/SwiftyBeaver",
+      "state": {
+        "revision": "12b5acf96d98f91d50de447369bd18df74600f1a",
+        "version": "1.9.6"
+      }
+    }
+  ],
+  "package_resolved_sha256": "c675cd6e829faf64963986dd298cb68eedd5cac7b3c2e2809366210e063749d3",
+  "app_archive_sha256": "c8a0b950a5bff3bcb34167426df65db45393deeca6afe25d0072251d63223f18",
+  "build_run": 39111059922,
+  "release_tag": "hs2-build-39111059922-1",
+  "repository": "leap-frog21/hstracker-reconnect-build",
+  "executable_sha256": "22c64a3a6d16420e1b222af9c7f366f46a6c14962475a48351dec443929439c2"
+}

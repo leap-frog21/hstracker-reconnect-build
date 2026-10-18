@@ -1,2 +1,7 @@
 out/
 upstream/
+dist/
+.local-state/
+__pycache__/
+*.pyc
+.DS_Store
