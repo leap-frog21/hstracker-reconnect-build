@@ -7,7 +7,7 @@
     "README.md": "bea8587e1ffd7458059c68e0c05c3ee967b1672a9215a473374879af697b2094",
     "build_remote.sh": "09890d30c269d93836db821f2db4f85803e4b75dfab16d97d8881b245ea78a0b",
     "prepare_source.py": "472794b8282f528e780e7f1c05e4bf6918e9b77685bb78e2eb12ee6210845a73",
-    "reconnect.patch": "93af944fe4fd6c547055f1991025f8a31ddf6f52eb484b05833c989b5be41238",
-    "tests/main.swift": "19f611e7805c699f92772fa350b2fde283235aef70c36f88fe401bed39f95d72"
+    "reconnect.patch": "1942cce679748ca114f0a28ff1811cd6ab1cb6b00b2e6d3cd3cc99439efce994",
+    "tests/main.swift": "7b28baf38113bddca2ed2cdbcf73a6b08f5c3d3644d6f0843c0e584613c5b489"
   }
 }

@@ -36,15 +36,24 @@ index 5586fb3..bc7a105 100644
  				4B8A44DBE702C0F6C3BB0CA6 /* IDeathrattleProxy.swift in Sources */,
 diff --git a/HSTracker/Logging/BattlegroundsReconnectPolicy.swift b/HSTracker/Logging/BattlegroundsReconnectPolicy.swift
 new file mode 100644
-index 0000000..4158121
+index 0000000..85b18c2
 --- /dev/null
 +++ b/HSTracker/Logging/BattlegroundsReconnectPolicy.swift
-@@ -0,0 +1,19 @@
+@@ -0,0 +1,28 @@
 +import Foundation
 +
 +/// Retain match-level caches only when a running Battlegrounds match is
 +/// positively identified again. A reused entity/player ID is not a match ID.
 +enum BattlegroundsReconnectPolicy {
++    /// HearthMirror exposes this value as NSNumber. Parse its decimal value
++    /// without narrowing to Int or wrapping a negative number to UInt64.
++    static func gameHandleString(_ value: NSNumber?) -> String? {
++        guard let value, let handle = UInt64(value.stringValue), handle > 0 else {
++            return nil
++        }
++        return String(handle)
++    }
++
 +    static func shouldPreserveSession(
 +        activeBattlegroundsMatch: Bool,
 +        cachedGameHandle: String?,
@@ -60,7 +69,7 @@ index 0000000..4158121
 +    }
 +}
 diff --git a/HSTracker/Logging/Game.swift b/HSTracker/Logging/Game.swift
-index 8263d2c..a5e47c7 100644
+index 8263d2c..35ce598 100644
 --- a/HSTracker/Logging/Game.swift
 +++ b/HSTracker/Logging/Game.swift
 @@ -1699,14 +1699,43 @@ class Game: NSObject, PowerEventHandler {
@@ -73,8 +82,8 @@ index 8263d2c..a5e47c7 100644
 +    /// not lazily fetched here after the connection has already changed.
 +    func prepareForGameplayStart() {
 +        let observedServer = MirrorHelper.getGameServerInfo()
-+        let cachedHandle = _serverInfo.flatMap { $0.gameHandle > 0 ? "\($0.gameHandle)" : nil }
-+        let observedHandle = observedServer.flatMap { $0.gameHandle > 0 ? "\($0.gameHandle)" : nil }
++        let cachedHandle = _serverInfo.flatMap { BattlegroundsReconnectPolicy.gameHandleString($0.gameHandle) }
++        let observedHandle = observedServer.flatMap { BattlegroundsReconnectPolicy.gameHandleString($0.gameHandle) }
 +        let preserve = BattlegroundsReconnectPolicy.shouldPreserveSession(
 +            activeBattlegroundsMatch: !gameEnded && !isInMenu && !spectator && isBattlegroundsMatch(),
 +            cachedGameHandle: cachedHandle,
@@ -267,7 +276,7 @@ index 8263d2c..a5e47c7 100644
              self.updatePlayers(matchInfo: matchInfo)
 +            // Establish identity during normal tracking so a later reconnect
 +            // can compare against a genuinely pre-disconnect game handle.
-+            if let server = observedServer, server.gameHandle > 0 {
++            if let server = observedServer, BattlegroundsReconnectPolicy.gameHandleString(server.gameHandle) != nil {
 +                self._serverInfo = server
 +            }
              self._matchInfoCacheInvalid = false

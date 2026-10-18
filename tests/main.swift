@@ -34,4 +34,15 @@ expect(!preserves(true, "501", "0"), "zero observed after valid cached identity"
 expect(!preserves(true, "18446744073709551616", "18446744073709551616"), "numeric overflow")
 expect(preserves(true, "18446744073709551615", "18446744073709551615"), "full-width positive handle")
 
+// Exercise the Foundation type returned by HearthMirror, including values
+// that a signed Int cast or an unchecked uint64Value conversion would lose.
+expect(BattlegroundsReconnectPolicy.gameHandleString(nil) == nil, "missing NSNumber")
+expect(BattlegroundsReconnectPolicy.gameHandleString(NSNumber(value: 501)) == "501", "NSNumber integer")
+expect(BattlegroundsReconnectPolicy.gameHandleString(NSNumber(value: 0)) == nil, "NSNumber zero")
+expect(BattlegroundsReconnectPolicy.gameHandleString(NSNumber(value: -1)) == nil, "negative NSNumber must not wrap")
+expect(BattlegroundsReconnectPolicy.gameHandleString(NSNumber(value: 1.5)) == nil, "fractional NSNumber must not truncate")
+expect(BattlegroundsReconnectPolicy.gameHandleString(NSNumber(value: UInt64.max)) == String(UInt64.max), "NSNumber full-width handle")
+expect(BattlegroundsReconnectPolicy.gameHandleString(NSDecimalNumber(string: "18446744073709551616")) == nil, "NSNumber overflow")
+expect(BattlegroundsReconnectPolicy.gameHandleString(NSDecimalNumber.notANumber) == nil, "invalid NSNumber")
+
 print("PASS: \(checked) production identity-policy assertions")

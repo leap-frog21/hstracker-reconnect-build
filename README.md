@@ -26,6 +26,8 @@
 
 首轮构建因上游锁定文件缺少 OAuthSwift 的间接依赖而失败。构建脚本现先补齐依赖图，并检查原有每项锁定版本和来源均保持不变，再按完整锁定文件编译。最终 `Package.resolved` 随草稿测试包保存并计入摘要；本机未进行完整应用编译。
 
+第二轮已通过依赖解析和锁定版本检查，在补丁的三处 `NSNumber` 与整数比较处编译失败。现统一通过十进制字符串校验和转换，避免有符号截断或负数回绕；生产函数已覆盖空值、零、负数、小数、完整 UInt64 范围、溢出和无效值的回归用例。该验证不能替代完整应用编译及实局验收。
+
 上游来源：https://github.com/HearthSim/HSTracker
 
 费用说明：https://docs.github.com/en/billing/concepts/product-billing/github-actions
