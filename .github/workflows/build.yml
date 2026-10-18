@@ -1,0 +1,62 @@
+name: Build HSTracker 2.0 test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hstracker-test-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # Keep the proposed free-compute route explicit. A private build requires
+    # a separate review of the owner's quota/budget before changing this gate.
+    if: github.event.repository.private == false
+    runs-on: macos-26
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    env:
+      CI: "true"
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - name: Check out build instructions
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Check out pinned upstream
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: HearthSim/HSTracker
+          ref: 8d5ff46962ad485136cbc863ab62752004bdbe49
+          path: upstream
+          persist-credentials: false
+
+      - name: Verify inputs and apply patch
+        run: python3 prepare_source.py upstream
+
+      - name: Check production identity policy
+        run: |
+          xcrun swiftc upstream/HSTracker/Logging/BattlegroundsReconnectPolicy.swift \
+            tests/main.swift -o "$RUNNER_TEMP/reconnect-policy-tests"
+          "$RUNNER_TEMP/reconnect-policy-tests"
+
+      - name: Compile, sign, and package the test app
+        run: bash build_remote.sh upstream
+
+      - name: Store result as an unpublished draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh release create "hs2-build-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            out/HSTracker-2.0-test-arm64.zip out/build-manifest.json out/SHA256SUMS \
+            --draft --prerelease --target "$GITHUB_SHA" \
+            --title "HSTracker 2.0 test build ${GITHUB_RUN_ID}" \
+            --notes-file out/notes.md
+          echo "Test app stored as a draft; full runtime acceptance is still pending." >> "$GITHUB_STEP_SUMMARY"

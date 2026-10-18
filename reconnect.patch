@@ -1,0 +1,374 @@
+diff --git a/HSTracker.xcodeproj/project.pbxproj b/HSTracker.xcodeproj/project.pbxproj
+index 5586fb3..bc7a105 100644
+--- a/HSTracker.xcodeproj/project.pbxproj
++++ b/HSTracker.xcodeproj/project.pbxproj
+@@ -331,6 +331,7 @@
+ 		439C7EC91C777F8900D29859 /* LogLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439C7EAD1C777F8900D29859 /* LogLine.swift */; };
+ 		439C7ECA1C777F8900D29859 /* LogReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439C7EAF1C777F8900D29859 /* LogReader.swift */; };
+ 		439C7ECB1C777F8900D29859 /* LogReaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439C7EB11C777F8900D29859 /* LogReaderManager.swift */; };
++		AA20B0012026101800000001 /* BattlegroundsReconnectPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA20B0012026101800000002 /* BattlegroundsReconnectPolicy.swift */; };
+ 		439C7ECC1C777F8900D29859 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439C7EB31C777F8900D29859 /* Player.swift */; };
+ 		439C7EDE1C777FA900D29859 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439C7ECF1C777FA900D29859 /* ImageUtils.swift */; };
+ 		439DD8F41DB23212004EBE47 /* PlayerTurn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439DD8F31DB23212004EBE47 /* PlayerTurn.swift */; };
+@@ -2318,6 +2319,7 @@
+ 		439C7EAD1C777F8900D29859 /* LogLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLine.swift; sourceTree = "<group>"; };
+ 		439C7EAF1C777F8900D29859 /* LogReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogReader.swift; sourceTree = "<group>"; };
+ 		439C7EB11C777F8900D29859 /* LogReaderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogReaderManager.swift; sourceTree = "<group>"; };
++		AA20B0012026101800000002 /* BattlegroundsReconnectPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlegroundsReconnectPolicy.swift; sourceTree = "<group>"; };
+ 		439C7EB31C777F8900D29859 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+ 		439C7ECF1C777FA900D29859 /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
+ 		439C7ED11C777FA900D29859 /* InitialConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialConfiguration.swift; sourceTree = "<group>"; };
+@@ -4431,6 +4433,7 @@
+ 				439DD8FB1DB237C0004EBE47 /* EntityInfo.swift */,
+ 				439C7E961C777F8900D29859 /* Enums */,
+ 				439C7EA11C777F8900D29859 /* Game.swift */,
++				AA20B0012026101800000002 /* BattlegroundsReconnectPolicy.swift */,
+ 				B8A9CB322571F160000071FC /* GuessedCardState.swift */,
+ 				439C7EA21C777F8900D29859 /* Handlers */,
+ 				B8230B922C8BE112008CBEEB /* Interfaces */,
+@@ -7700,6 +7703,7 @@
+ 				B87216922F16ECBE00E848BA /* OverloadThisGameCounter.swift in Sources */,
+ 				B8DB12BF2EBAE910004268FA /* TinyRafaam.swift in Sources */,
+ 				439C7ECB1C777F8900D29859 /* LogReaderManager.swift in Sources */,
++				AA20B0012026101800000001 /* BattlegroundsReconnectPolicy.swift in Sources */,
+ 				010B5360BE3F93FCA330D716 /* RewoundEntityCreationFilter.swift in Sources */,
+ 				B8815BF0302162F50016D77A /* ICopiesDeathrattlesProxy.swift in Sources */,
+ 				4B8A44DBE702C0F6C3BB0CA6 /* IDeathrattleProxy.swift in Sources */,
+diff --git a/HSTracker/Logging/BattlegroundsReconnectPolicy.swift b/HSTracker/Logging/BattlegroundsReconnectPolicy.swift
+new file mode 100644
+index 0000000..4158121
+--- /dev/null
++++ b/HSTracker/Logging/BattlegroundsReconnectPolicy.swift
+@@ -0,0 +1,19 @@
++import Foundation
++
++/// Retain match-level caches only when a running Battlegrounds match is
++/// positively identified again. A reused entity/player ID is not a match ID.
++enum BattlegroundsReconnectPolicy {
++    static func shouldPreserveSession(
++        activeBattlegroundsMatch: Bool,
++        cachedGameHandle: String?,
++        observedGameHandle: String?
++    ) -> Bool {
++        guard activeBattlegroundsMatch,
++              let cachedGameHandle, let observedGameHandle,
++              let cached = UInt64(cachedGameHandle), cached > 0,
++              let observed = UInt64(observedGameHandle), observed > 0 else {
++            return false
++        }
++        return cached == observed
++    }
++}
+diff --git a/HSTracker/Logging/Game.swift b/HSTracker/Logging/Game.swift
+index 8263d2c..a5e47c7 100644
+--- a/HSTracker/Logging/Game.swift
++++ b/HSTracker/Logging/Game.swift
+@@ -1699,14 +1699,43 @@ class Game: NSObject, PowerEventHandler {
+         })
+     }
+ 
+-    func reset(updateUI: Bool = true) {
++    /// Distinguish a verified reconnect from a new match before discarding
++    /// entities. The previous handle must have been cached during this match,
++    /// not lazily fetched here after the connection has already changed.
++    func prepareForGameplayStart() {
++        let observedServer = MirrorHelper.getGameServerInfo()
++        let cachedHandle = _serverInfo.flatMap { $0.gameHandle > 0 ? "\($0.gameHandle)" : nil }
++        let observedHandle = observedServer.flatMap { $0.gameHandle > 0 ? "\($0.gameHandle)" : nil }
++        let preserve = BattlegroundsReconnectPolicy.shouldPreserveSession(
++            activeBattlegroundsMatch: !gameEnded && !isInMenu && !spectator && isBattlegroundsMatch(),
++            cachedGameHandle: cachedHandle,
++            observedGameHandle: observedHandle)
++        logger.info("Gameplay reset: preserving Battlegrounds session=\(preserve), "
++            + "cached identity available=\(cachedHandle != nil), observed identity available=\(observedHandle != nil)")
++        reset(preservingBattlegroundsSession: preserve)
++        if preserve {
++            _serverInfo = observedServer
++        }
++    }
++
++    // Changed on every reset, including same-match reconnects. In-flight
++    // asynchronous mirror reads must not overwrite a newer entity generation.
++    private(set) var stateGeneration = UUID()
++
++    func reset(updateUI: Bool = true, preservingBattlegroundsSession: Bool = false) {
+         logger.verbose("Reseting Game")
++        stateGeneration = UUID()
++        let previousPlayer = (id: player.id, name: player.name,
++                              originalClass: player.originalClass, currentClass: player.currentClass)
++        let previousOpponent = (id: opponent.id, name: opponent.name,
++                                originalClass: opponent.originalClass, currentClass: opponent.currentClass)
+         gameTime = nil
+-        currentTurn = 0
++        if !preservingBattlegroundsSession {
++            currentTurn = 0
++            gameId = UUID.init().uuidString
++            playedCards.removeAll()
++        }
+         hasValidDeck = false
+-        gameId = UUID.init().uuidString
+-
+-        playedCards.removeAll()
+ 		
+ 		self.gameResult = .unknown
+ 		self.wasConceded = false
+@@ -1714,12 +1743,14 @@ class Game: NSObject, PowerEventHandler {
+         lastId = 0
+         gameTriggerCount = 0
+ 
+-        _matchInfo = nil
+-        _currentFormatType = .ft_unknown
+-        _currentGameType = .gt_unknown
++        if !preservingBattlegroundsSession {
++            _matchInfo = nil
++            _currentFormatType = .ft_unknown
++            _currentGameType = .gt_unknown
++            _currentGameMode = .none
++            _serverInfo = nil
++        }
+         _gameTypeDuosCorrectionCheckCompleted = false
+-		_currentGameMode = .none
+-        _serverInfo = nil
+ 
+         entities.removeAll()
+         isBattlegroundsCombatPhase = false
+@@ -1747,8 +1778,10 @@ class Game: NSObject, PowerEventHandler {
+         awaitingAvenge = false
+         lastTurnStart = [0, 0]
+         
+-        playerIDNameMapping.removeAll()
+-        playerIdsByPlayerName.removeAll()
++        if !preservingBattlegroundsSession {
++            playerIDNameMapping.removeAll()
++            playerIdsByPlayerName.removeAll()
++        }
+         parsedBuildNumber = false
+         choicesById.removeAll()
+         choicesByTaskList.removeAll()
+@@ -1759,31 +1792,47 @@ class Game: NSObject, PowerEventHandler {
+             player.currentClass = player.originalClass
+         }
+         opponent.reset()
++        if preservingBattlegroundsSession {
++            // Only identity survives. Player.reset() and entities.removeAll()
++            // still discard live entity state before CREATE_GAME rebuilds it.
++            player.id = previousPlayer.id
++            player.name = previousPlayer.name
++            player.originalClass = previousPlayer.originalClass
++            player.currentClass = previousPlayer.currentClass
++            opponent.id = previousOpponent.id
++            opponent.name = previousOpponent.name
++            opponent.originalClass = previousOpponent.originalClass
++            opponent.currentClass = previousOpponent.currentClass
++        }
+         activeEffects.reset()
+         relatedCardsManager.reset()
+         resetPlayerResourcesWidgets()
+-        if updateUI {
++        if updateUI && !preservingBattlegroundsSession {
+             updateSecretTracker(cards: [])
+             windowManager.hideGameTrackers()
+         }
+ 		
+-		_spectator = nil
+-        battlegroundsStateLock.around {
+-            _availableRaces = nil
+-            _unavailableRaces = nil
++        if !preservingBattlegroundsSession {
++            _spectator = nil
++            battlegroundsStateLock.around {
++                _availableRaces = nil
++                _unavailableRaces = nil
++            }
++            _battlegroundsBoardState?.reset()
++            _battlegroundsDeityState?.reset()
+         }
+         _brawlInfo = nil
+-        _battlegroundsBoardState?.reset()
+-        _battlegroundsDeityState?.reset()
+         _battlegroundsHeroPickStatsParams = nil
+         _battlegroundsHeroPickState = nil
+         _mulliganGuideParams = nil
+         _mulliganV2Params = nil
+         _mulliganState = nil
+         mulliganCardStats = nil
+-        windowManager.rootOverlay?.viewModel.battlegroundsOpponentInfo.reset()
+-        windowManager.rootOverlay?.viewModel.bobsBuddy.resetDisplays()
+-        updateTurnCounter(turn: 1)
++        if !preservingBattlegroundsSession {
++            windowManager.rootOverlay?.viewModel.battlegroundsOpponentInfo.reset()
++            windowManager.rootOverlay?.viewModel.bobsBuddy.resetDisplays()
++            updateTurnCounter(turn: 1)
++        }
+         
+         hideBobsBuddy = false
+         hideBattlegroundsTurn = false
+@@ -1830,12 +1879,15 @@ class Game: NSObject, PowerEventHandler {
+     }
+     
+     func cacheGameType() {
++        let generation = stateGeneration
+         if let currentGameType = MirrorHelper.getGameType(), currentGameType != GameType.gt_unknown.rawValue {
++            guard stateGeneration == generation, !gameEnded else { return }
+             if !_gameTypeDuosCorrectionCheckCompleted { // Do not let a late mirror overwrite a bg game type already corrected by TryCorrectMisreadSoloGameType.
+                 _currentGameType = GameType(rawValue: currentGameType) ?? .gt_unknown
+             }
+         } else {
+             DispatchQueue.global().asyncAfter(deadline: .now() + 1.0) {
++                guard self.stateGeneration == generation, !self.gameEnded else { return }
+                 self.cacheGameType()
+             }
+         }
+@@ -1927,20 +1979,25 @@ class Game: NSObject, PowerEventHandler {
+         if !_matchInfoCacheInvalid {
+             return
+         }
++        let generation = stateGeneration
+         DispatchQueue.global().async {
+             var matchInfo: MatchInfo?
++            var validatedMatchInfo = false
+             for i in 0...30 {
+                 if i > 0 {
+                     logger.info("Waiting for matchInfo... (matchInfo=\(String(describing: matchInfo)), localPlayer=\(matchInfo?.localPlayer.name ?? "Unknown"), opposingPlayer=\(matchInfo?.opposingPlayer.name ?? "Unknown"))")
+                     Thread.sleep(forTimeInterval: 1)
+                 }
+-                matchInfo = self.matchInfo
++                guard self.stateGeneration == generation, !self.gameEnded else { return }
++                // Read into a local value: the matchInfo getter mutates player
++                // IDs before its caller can reject an obsolete generation.
++                matchInfo = MirrorHelper.getMatchInfo().map { MatchInfo(info: $0) }
+                 guard let matchInfo else {
+                     continue
+                 }
+                 
+                 // the player info will probably arrive shortly
+-                if !self.isValidPlayerInfo(playerInfo: matchInfo.localPlayer) || !self.isValidPlayerInfo(playerInfo: matchInfo.opposingPlayer, allowMissing: self.isMercenariesMatch()) {
++                if !self.isValidPlayerInfo(playerInfo: matchInfo.localPlayer) || !self.isValidPlayerInfo(playerInfo: matchInfo.opposingPlayer, allowMissing: GameMode(gameType: matchInfo.gameType) == .mercenaries) {
+                     continue
+                 }
+                 
+@@ -1951,14 +2008,24 @@ class Game: NSObject, PowerEventHandler {
+                 }
+                     
+                 // looking good
++                validatedMatchInfo = true
+                 break
+             }
+-            guard let matchInfo else {
++            guard self.stateGeneration == generation, !self.gameEnded else { return }
++            guard validatedMatchInfo, let matchInfo else {
+                 logger.info("Giving up waiting for matchInfo")
+                 return
+             }
++            let observedServer = MirrorHelper.getGameServerInfo()
++            guard self.stateGeneration == generation, !self.gameEnded else { return }
+             self._matchInfo = matchInfo
++            self._currentGameType = matchInfo.gameType
+             self.updatePlayers(matchInfo: matchInfo)
++            // Establish identity during normal tracking so a later reconnect
++            // can compare against a genuinely pre-disconnect game handle.
++            if let server = observedServer, server.gameHandle > 0 {
++                self._serverInfo = server
++            }
+             self._matchInfoCacheInvalid = false
+         }
+     }
+@@ -2121,6 +2188,18 @@ class Game: NSObject, PowerEventHandler {
+ 
+     private var _lastReconnectStartTimestamp: Date = Date.distantPast
+     func handleGameReconnect(timestamp: Date) {
++        // A GAMEPLAY -> GAMEPLAY scene transition bypasses gameStart(). Refill
++        // the same identity/type caches here, including tracker cold starts in
++        // the middle of a match. Do not call gameStart(), which resets sessions
++        // and emits a second game-start notification for the same match.
++        gameEnded = false
++        isInMenu = false
++        handledGameEnd = false
++        _matchInfo = nil
++        invalidateMatchInfoCache()
++        cacheMatchInfo()
++        cacheGameType()
++        let generation = stateGeneration
+         DispatchQueue.global().async {
+             logger.info("Joined after mulligan, assuming reconnect.")
+             
+@@ -2129,11 +2208,15 @@ class Game: NSObject, PowerEventHandler {
+             }
+             self._lastReconnectStartTimestamp = timestamp
+             
+-            for _ in 0 ..< 20 where self.gameEntity == nil || self.currentMode != .gameplay {
++            for _ in 0 ..< 20 where self.gameEntity == nil || self.currentMode != .gameplay
++                || !self.determinedPlayers() || self.currentGameType == .gt_unknown {
++                guard self.stateGeneration == generation, !self.gameEnded else { return }
+                 Thread.sleep(forTimeInterval: 0.5)
+             }
+             
+-            if self.gameEntity == nil || self.currentMode != .gameplay {
++            if self.stateGeneration != generation || self.gameEnded
++                || self.gameEntity == nil || self.currentMode != .gameplay
++                || !self.determinedPlayers() || self.currentGameType == .gt_unknown {
+                 return
+             }
+             
+diff --git a/HSTracker/Logging/Handlers/LoadingScreenHandler.swift b/HSTracker/Logging/Handlers/LoadingScreenHandler.swift
+index a098b4a..e22beed 100644
+--- a/HSTracker/Logging/Handlers/LoadingScreenHandler.swift
++++ b/HSTracker/Logging/Handlers/LoadingScreenHandler.swift
+@@ -140,8 +140,7 @@ struct LoadingScreenHandler: LogEventParser {
+                 coreManager.game.gameStart(at: logLine.time)
+             }
+         } else if logLine.line.contains("Gameplay.Start") {
+-            // uncommenting this line will prevent powerlog reader to work properly
+-            coreManager.game.reset()
++            coreManager.game.prepareForGameplayStart()
+         } else if logLine.line.contains("MulliganManager.HandleGameStart") && logLine.line.contains("IsPastBeginPhase()=True") {
+             // Let Bob's Buddy know a reconnect happened, so a combat in progress is not validated
+             // against a log that is missing its outcome events.
+diff --git a/HSTracker/Logging/Parsers/TagChangeActions.swift b/HSTracker/Logging/Parsers/TagChangeActions.swift
+index fd83b95..f3beb38 100644
+--- a/HSTracker/Logging/Parsers/TagChangeActions.swift
++++ b/HSTracker/Logging/Parsers/TagChangeActions.swift
+@@ -1498,15 +1498,25 @@ struct TagChangeActions {
+         }
+     }
+ 
+-    // TODO: this is essentially blocking the global queue!
+     private func setHeroAsync(eventHandler: PowerEventHandler, id: Int) {
++        let game = eventHandler as? Game
++        let generation = game?.stateGeneration
+         DispatchQueue.global().async {
++            func isCurrentGeneration() -> Bool {
++                game.map { $0.stateGeneration == generation && !$0.gameEnded } ?? true
++            }
++            guard isCurrentGeneration() else { return }
+             logger.info("Found hero with id \(id) ")
+             if eventHandler.playerEntity == nil {
+                 logger.info("Waiting for playerEntity")
+-                while eventHandler.playerEntity == nil {
++                for _ in 0..<100 where eventHandler.playerEntity == nil {
++                    guard isCurrentGeneration() else { return }
+                     Thread.sleep(forTimeInterval: 0.1)
+                 }
++                guard isCurrentGeneration(), eventHandler.playerEntity != nil else {
++                    logger.warning("Player entity was not ready after reconnect")
++                    return
++                }
+                 logger.info("Found PlayerEntity")
+             }
+ 
+@@ -1521,9 +1531,14 @@ struct TagChangeActions {
+ 
+             if eventHandler.opponentEntity == nil {
+                 logger.info("Waiting for opponentEntity")
+-                while eventHandler.opponentEntity == nil {
++                for _ in 0..<100 where eventHandler.opponentEntity == nil {
++                    guard isCurrentGeneration() else { return }
+                     Thread.sleep(forTimeInterval: 0.1)
+                 }
++                guard isCurrentGeneration(), eventHandler.opponentEntity != nil else {
++                    logger.warning("Opponent entity was not ready after reconnect")
++                    return
++                }
+                 logger.info("Found OpponentEntity")
+             }
+             if eventHandler.opponent.originalClass == nil, let opponentEntity = eventHandler.opponentEntity, id == opponentEntity[.hero_entity] {
