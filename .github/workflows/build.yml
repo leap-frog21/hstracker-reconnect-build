@@ -55,7 +55,7 @@ jobs:
         run: |
           set -euo pipefail
           gh release create "hs2-build-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
-            out/HSTracker-2.0-test-arm64.zip out/build-manifest.json out/SHA256SUMS \
+            out/HSTracker-2.0-test-arm64.zip out/build-manifest.json out/SHA256SUMS out/Package.resolved \
             --draft --prerelease --target "$GITHUB_SHA" \
             --title "HSTracker 2.0 test build ${GITHUB_RUN_ID}" \
             --notes-file out/notes.md

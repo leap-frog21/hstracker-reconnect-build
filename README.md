@@ -24,6 +24,8 @@
 
 下载后先核验 `SHA256SUMS` 与 `build-manifest.json`。验证同局身份、阵容与胜率保留、后续回合更新、新局清理；通过后才决定切换使用入口。
 
+首轮构建因上游锁定文件缺少 OAuthSwift 的间接依赖而失败。构建脚本现先补齐依赖图，并检查原有每项锁定版本和来源均保持不变，再按完整锁定文件编译。最终 `Package.resolved` 随草稿测试包保存并计入摘要；本机未进行完整应用编译。
+
 上游来源：https://github.com/HearthSim/HSTracker
 
 费用说明：https://docs.github.com/en/billing/concepts/product-billing/github-actions
