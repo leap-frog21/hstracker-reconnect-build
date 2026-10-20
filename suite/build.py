@@ -19,8 +19,8 @@ def build(output):
     resources.mkdir()
     info = {'CFBundleIdentifier': 'com.leap.hsdisconnect', 'CFBundleName': 'HSDisconnect',
             'CFBundleDisplayName': '炉石拔线助手 3.0', 'CFBundleExecutable': 'HSDisconnect',
-            'CFBundlePackageType': 'APPL', 'CFBundleShortVersionString': '3.0.0',
-            'CFBundleVersion': '3.0.0', 'LSUIElement': True, 'LSMinimumSystemVersion': '14.0',
+            'CFBundlePackageType': 'APPL', 'CFBundleShortVersionString': '3.0.1',
+            'CFBundleVersion': '3.0.1', 'LSUIElement': True, 'LSMinimumSystemVersion': '14.0',
             'NSHighResolutionCapable': True}
     (app / 'Contents/Info.plist').write_bytes(plistlib.dumps(info))
     for source, target in [(ROOT / 'helper/hsd.py', 'hsd.py'),

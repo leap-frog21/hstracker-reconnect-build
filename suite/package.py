@@ -23,7 +23,7 @@ def main():
     args = parser.parse_args()
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
-    package = output / 'Hearthstone-Disconnect-Suite-3.0.0-arm64'
+    package = output / 'Hearthstone-Disconnect-Suite-3.0.1-arm64'
     if package.exists():
         raise RuntimeError('Package directory already exists')
     source = args.hstracker_app.resolve()
@@ -38,7 +38,7 @@ def main():
     (package / '安装3.0.command').chmod(0o755)
     shutil.copyfile(ROOT.parent / 'LICENSE', package / 'LICENSE')
     shutil.copyfile(ROOT / 'hstracker-build.json', package / 'hstracker-build.json')
-    manifest = {'suite_version': '3.0.0', 'architecture': 'arm64',
+    manifest = {'suite_version': '3.0.1', 'architecture': 'arm64',
                 'python_bundled': False, 'signature': 'ad-hoc; not notarized',
                 'hstracker_build_run': 39111059922, 'files': {}, 'symlinks': {}}
     for path in sorted(package.rglob('*')):

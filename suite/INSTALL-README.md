@@ -1,12 +1,12 @@
 # 炉石拔线助手套件 3.0
 
-本包供 Apple 芯片 Mac 自用重装，包含手动拔线按钮及基于 HSTracker 3.7.0 的重连兼容构建。3.0 是套件版本号，HSTracker 内部版本仍为 3.7.0.DEV。
+本包供 Apple 芯片 Mac 自用重装，包含手动拔线按钮及基于 HSTracker 3.7.0 的重连兼容构建。3.0.1 是套件版本号，HSTracker 内部版本仍为 3.7.0.DEV。
 
 ## 安装
 
 1. 保留现有炉石、Clash Verge 和 Python 3.10+ 环境。默认使用 `~/miniconda3/bin/python3`；Clash Verge 需要启用 TUN。
 2. 正常退出炉石，解压整个安装包，双击 `安装3.0.command`。安装期间不需要完整 Xcode，不会下载或重装 Python。
-3. 安装完成后，炉石启动时会自动打开拔线按钮和 HSTracker；炉石退出时两者一起关闭。快捷键仍是 Control + Option + D。断线仅由你手动触发。
+3. 安装完成后，炉石启动时会自动打开拔线按钮和 HSTracker；炉石退出时两者一起关闭。快捷键仍是 Control + Option + D。断线仅由你手动触发。每次从当前对局日志读取游戏服 IP 和端口；无有效目标或匹配不唯一时取消，保留战网连接。
 4. 如 macOS 提示辅助功能或游戏读取授权，请为 `/Applications/HSTracker.app` 完成系统确认。本包为 ad-hoc 签名，未公证。
 
 使用其他 Python 时，在终端执行：

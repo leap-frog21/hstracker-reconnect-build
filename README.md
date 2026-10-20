@@ -2,14 +2,14 @@
 
 由 leap-frog21 维护的 macOS 自用套件：手动拔线按钮，以及基于 HearthSim/HSTracker 3.7.0 的重连兼容改进。目标是在同局多次重连后保留已采集的阵容和已有胜率预测，并继续跟踪后续回合。
 
-3.0 将现有功能整理为可重装安装包，不新增模拟器或自动拔线。两个 App 安装到“应用程序”，运行脚本随 App 放置，炉石启动时同时打开两者，退出时一起关闭；安装后不依赖旧开发目录。按钮及 Control + Option + D 快捷键保留。
+3.0 将现有功能整理为可重装安装包，不新增模拟器或自动拔线。两个 App 安装到“应用程序”，运行脚本随 App 放置，炉石启动时同时打开两者，退出时一起关闭；安装后不依赖旧开发目录。按钮及 Control + Option + D 快捷键保留。3.0.1 每次手动操作从当前对局日志读取服务器 IP 和端口，不再固定为 1119；匹配不唯一或日志显示已离开对局时取消操作，保留战网登录连接。
 
 ## 下载与安装
 
-安装包存于本仓库未发布的 `v3.0.0` Release 草稿，仅供仓库所有者下载。没有公开发布正式安装包。
+安装包存于本仓库未发布的 `v3.0.1` Release 草稿，仅供仓库所有者下载。没有公开发布正式安装包。
 
 ```bash
-gh release download v3.0.0 --repo leap-frog21/hstracker-reconnect-build --dir /你的/下载目录
+gh release download v3.0.1 --repo leap-frog21/hstracker-reconnect-build --dir /你的/下载目录
 ```
 
 核验 `SHA256SUMS` 后完整解压 ZIP，正常退出炉石，双击 `安装3.0.command`。只适配本人的 Apple 芯片 Mac 使用场景，使用现有 Python 3.10+，默认路径为 `~/miniconda3/bin/python3`；另需已有炉石和 Clash Verge TUN。不附带 Python，不要求安装完整 Xcode。
@@ -31,6 +31,6 @@ gh release download v3.0.0 --repo leap-frog21/hstracker-reconnect-build --dir /�
 
 3.0 的 7 项合成回归通过；从旧目录外解压并安装成功；临时移开整个旧项目目录后，安装版按钮能运行真实内置后端的只读探测，实际 LaunchAgent 能随模拟游戏进程启动两个 App，并在该进程退出后关闭两者。结果与包摘要见 [suite/validation-3.0.json](suite/validation-3.0.json)。
 
-本轮没有执行真实断线。连接筛选与断线 Python 源码未改，HSTracker 二进制也与先前单局连续 6 次重连、后续预测及新局清理验收的版本相同。双人、观战、身份读取异常和长期稳定性未据此作全量保证。
+3.0.1 的 7 项离线回归通过，覆盖日志端口变化、目标切换、离开后清除、重连、战网连接保护和双工具生命周期；现场只读检查确认动态目标可唯一匹配。本次未执行真实断线；HSTracker 二进制与先前单局连续 6 次重连、后续预测及新局清理验收的版本相同。双人、观战、身份读取异常和长期稳定性未据此作全量保证。
 
 原 HSTracker 构建工作流仍仅手动触发，无自动重试，不使用 Actions artifact 或缓存。此前三次构建额度已全部执行；今后若需重新完整编译，应另定构建上限。3.0 的小型按钮可用本机 Command Line Tools 重建。

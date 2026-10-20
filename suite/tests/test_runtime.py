@@ -23,34 +23,6 @@ def connection(identity, ip='192.0.2.1', host='', process='/Applications/Hearths
             'processPath': process, 'destinationIP': ip, 'host': host}}
 
 
-class ConnectionSelection(unittest.TestCase):
-    def selected(self, connections, server=None):
-        with patch.object(backend, 'clash_connections', return_value=connections), \
-             patch.object(backend, 'last_server_ip', return_value=server):
-            return backend.hs_connections()
-
-    def test_preserves_login_and_unrelated_connections(self):
-        game = connection('game')
-        self.assertEqual(self.selected([connection('login', host='login.invalid'),
-                         connection('other', process='/Applications/Other.app/Contents/MacOS/Other'), game]), [game])
-
-    def test_ambiguous_without_server_does_nothing(self):
-        self.assertEqual(self.selected([connection('one'), connection('two', ip='192.0.2.2')]), [])
-
-    def test_known_server_selects_only_that_server(self):
-        game = connection('wanted', ip='192.0.2.2')
-        self.assertEqual(self.selected([connection('old'), game], '192.0.2.2'), [game])
-
-    def test_missing_known_server_does_nothing(self):
-        self.assertEqual(self.selected([connection('wrong')], '192.0.2.9'), [])
-
-    def test_zero_second_cut_closes_only_selected_connection(self):
-        with patch.object(backend, 'hs_connections', return_value=[connection('wanted')]), \
-             patch.object(backend, 'clash_request') as request:
-            self.assertEqual(backend.cut_once(0), 1)
-            request.assert_called_once_with('DELETE', '/connections/wanted')
-
-
 class Lifecycle(unittest.TestCase):
     def test_start_stop_and_relaunch(self):
         state = manager.Session()

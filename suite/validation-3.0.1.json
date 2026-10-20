@@ -1,0 +1,11 @@
+{
+  "suite_version": "3.0.1",
+  "evidence_as_of": "2026-10-20",
+  "offline_tests_passed": 7,
+  "archive_extract_and_check": true,
+  "bundled_backend_matches_source": true,
+  "live_target_read_only_match": true,
+  "live_disconnect_tested": false,
+  "hstracker_rebuilt": false,
+  "archive_sha256": "322d6f08c42e98c124dbdba44049bdb2f67334657d078432d2ca13cd449c88df"
+}

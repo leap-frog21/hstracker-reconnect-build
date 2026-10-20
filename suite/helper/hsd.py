@@ -5,7 +5,7 @@
 原理：
   1. 监听 /Applications/Hearthstone/Logs/Hearthstone_*/Power.log
   2. 检测酒馆战棋战斗阶段开始（STEP / NEXT_STEP = MAIN_COMBAT）
-  3. 通过 Clash Verge 的本地 API 关闭炉石到游戏服务器（TCP 1119）的连接
+  3. 通过 Clash Verge 的本地 API 关闭炉石到当前游戏服务器（从日志读取 IP 和端口）的连接
   4. 在 cut_seconds 内持续关闭新连接，阻止客户端立刻重连
   5. 停止关闭后客户端自动重连，直接拿到战斗结算后的状态
 
@@ -15,6 +15,7 @@
 from __future__ import annotations
 
 import argparse
+import ipaddress
 import json
 import logging
 import os
@@ -37,7 +38,7 @@ CURL = "/usr/bin/curl"
 PGREP = "/usr/bin/pgrep"
 
 COMBAT_RE = re.compile(r"tag=(?:STEP|NEXT_STEP) value=MAIN_COMBAT\b")
-SERVER_RE = re.compile(r"address=\s*(\d{1,3}(?:\.\d{1,3}){3}):1119")
+SERVER_RE = re.compile(r"address=\s*(\d{1,3}(?:\.\d{1,3}){3}):(\d{1,5})\b")
 
 DEFAULTS = {
     "cut_seconds": 2.0,
@@ -127,27 +128,38 @@ def tail_lines(path: Path, n: int) -> list[str]:
         return []
 
 
-def last_server_ip(power_log: Path | None) -> str | None:
+def last_server_endpoint(power_log: Path | None) -> tuple[str, int] | None:
+    """读取最新游戏服地址；结束/离开对局后不再使用旧目标。"""
     if not power_log:
         return None
     net_log = power_log.parent / "GameNetLogger.log"
-    if not net_log.exists():
-        return None
     for line in reversed(tail_lines(net_log, 300)):
+        if "Network.DisconnectFromGameServer()" in line:
+            return None
+        if "Network.GotoGameServe()" not in line:
+            continue
         m = SERVER_RE.search(line)
         if m:
-            return m.group(1)
+            try:
+                ip = str(ipaddress.IPv4Address(m.group(1)))
+                port = int(m.group(2))
+                return (ip, port) if 1 <= port <= 65535 else None
+            except ValueError:
+                return None
     return None
 
 
-def hs_connections(power_log: Path | None = None) -> list[dict]:
-    """只返回“纯 IP”的游戏服连接，排除战网/BGS 的 1119 连接。
+def last_server_ip(power_log: Path | None) -> str | None:
+    endpoint = last_server_endpoint(power_log)
+    return endpoint[0] if endpoint else None
 
-    战网登录连接（如 cn.actual.battlenet.com.cn:1119）host 非空，
-    关闭它会导致 ERROR_SDK_SOCKET_CLOSED，重连后无法登录。
-    游戏服连接是纯 IP：host 为空、destinationIP 非空。
-    """
-    server_ip = last_server_ip(power_log)
+
+def hs_connections(power_log: Path | None = None) -> list[dict]:
+    """只选择当前日志目标的唯一炉石 TCP 连接，保留战网登录连接。"""
+    endpoint = last_server_endpoint(power_log)
+    if not endpoint:
+        return []
+    server_ip, server_port = endpoint
     candidates = []
     for c in clash_connections():
         m = c.get("metadata") or {}
@@ -157,29 +169,22 @@ def hs_connections(power_log: Path | None = None) -> list[dict]:
             dport = int(m.get("destinationPort"))
         except (TypeError, ValueError):
             continue
-        if dport != 1119:
+        if dport != server_port:
             continue
         proc = m.get("processPath") or ""
         if not (proc.endswith("/Hearthstone") or "Hearthstone.app/Contents/MacOS/Hearthstone" in proc):
             continue
         host = (m.get("host") or "").strip()
         ip = (m.get("destinationIP") or "").strip()
-        if host or not ip:
+        if host or ip != server_ip:
             continue
-        if server_ip:
-            if ip == server_ip:
-                return [c]
-            continue
-        candidates.append(c)
-    if server_ip:
-        return []
-    if len(candidates) == 1:
-        return candidates
-    return []
+        if c.get("id"):
+            candidates.append(c)
+    return candidates if len(candidates) == 1 else []
 
 
 def cut_once(wait_seconds: float, power_log: Path | None = None) -> int:
-    """关闭当前炉石的 1119 连接一次，然后等待 wait_seconds 再返回。"""
+    """关闭当前炉石游戏服连接一次，然后等待 wait_seconds 再返回。"""
     try:
         conns = hs_connections(power_log)
     except Exception as e:
@@ -347,13 +352,13 @@ def cmd_status(cfg: dict) -> None:
     print(f"最新 Power.log: {path}")
     if path:
         print(f"日志大小     : {path.stat().st_size} 字节")
-        print(f"服务器 IP    : {last_server_ip(path)}")
+        print(f"游戏服目标   : {last_server_endpoint(path)}")
     for p in LOG_CONFIGS:
         print(f"log.config   : {p}  {'存在' if p.exists() else '缺失'}")
     if CLASH_SOCK.exists():
         try:
             conns = hs_connections(path)
-            print(f"炉石 1119 连接: {len(conns)}")
+            print(f"当前游戏服连接: {len(conns)}")
             for c in conns:
                 m = c.get("metadata") or {}
                 print(f"  {c.get('id')}  {m.get('destinationIP')}:{m.get('destinationPort')}")

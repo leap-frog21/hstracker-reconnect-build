@@ -1,11 +1,11 @@
 # 3.0 源码与打包
 
-目标是同一台 Apple 芯片 Mac 的可重装安装包；不是通用安装器。Python 不随包分发，使用现有环境。按钮界面、快捷键、单次零等待断线和连接筛选沿用已有实现。
+目标是同一台 Apple 芯片 Mac 的可重装安装包；不是通用安装器。Python 不随包分发，使用现有环境。按钮界面、快捷键、单次零等待断线和连接筛选在 3.0.1 改为当前日志目标的 IP 和端口精确匹配。
 
 ## 文件
 
 - `helper/main.swift`：小型 Cocoa 按钮；从 App Resources 加载后端，从用户支持目录读 Python 路径和配置。
-- `helper/hsd.py`：原后端，连接筛选和断线代码保持原样。
+- `helper/hsd.py`：后端，动态读取当前游戏服 IP 和端口；无目标或有歧义时取消，保留战网登录连接。
 - `session_manager.py`：检测炉石进程的启停，仅打开/关闭已安装 App，不调用断线 API。
 - `install.py`、`安装3.0.command`：校验、迁移安装、配置用户级 LaunchAgent；当前炉石仍在运行时拒绝切换，避免打断对局。
 - `build.py`、`package.py`：本机 Command Line Tools 编译按钮、复用已验收 HSTracker 并打包。

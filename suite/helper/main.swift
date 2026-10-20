@@ -30,7 +30,7 @@ if CommandLine.arguments.contains("--diagnose") {
             && String(data: output, encoding: .utf8)?.contains("cut") == true
     } catch { }
     let result: [String: Any] = [
-        "suite_version": "3.0.0", "backend_help_ok": backendOK,
+        "suite_version": "3.0.1", "backend_help_ok": backendOK,
         "bundled_backend": FileManager.default.fileExists(atPath: scriptPath),
         "runtime_configured": runtime?["python"] != nil,
         "user_config_exists": FileManager.default.fileExists(atPath: configPath)

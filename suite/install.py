@@ -38,7 +38,7 @@ def fingerprint(app):
 
 def verify_package():
     manifest = json.loads((ROOT / 'package-manifest.json').read_text())
-    if manifest['suite_version'] != '3.0.0':
+    if manifest['suite_version'] != '3.0.1':
         raise RuntimeError('不是预期的 3.0 安装包')
     for relative, expected in manifest['files'].items():
         path = ROOT / relative
@@ -161,7 +161,7 @@ def install():
     for name in ('HSDisconnect', 'HSTracker'):
         subprocess.run(['/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister',
                         '-f', f'/Applications/{name}.app'], check=True, capture_output=True)
-    record = {'suite_version': '3.0.0', 'installed_at': timestamp,
+    record = {'suite_version': '3.0.1', 'installed_at': timestamp,
               'python': sys.executable, 'agent': str(AGENT), 'backup': str(backup),
               'old_project_directory_required': False, 'hstracker_build_run': 39111059922}
     (SUPPORT / 'installation-3.json').write_text(json.dumps(record, ensure_ascii=False, indent=2) + '\n')
